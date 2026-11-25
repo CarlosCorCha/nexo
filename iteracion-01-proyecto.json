@@ -4,7 +4,7 @@
   "field": "Iteración",
   "value": "Iteración 1",
   "start": "2026-11-25",
-  "end": "2026-12-08",
+  "end": "2026-11-30",
   "items": [
     "GE01",
     "GE02",
@@ -29,5 +29,5 @@
   },
   "revisión": "https://github.com/CarlosCorCha/nexo/pull/41",
   "accesoPúblicoComprobado": "2026-11-25",
-  "notes": "Solo se ha asignado trabajo a la primera iteración. Los periodos futuros generados por GitHub están vacíos y pendientes de planificación."
+  "notes": "Primera iteración ajustada a seis días naturales (25–30/11) para cumplir el plazo del aula, sin prórroga autorizada. Se conservan los ocho elementos y sus estados; los periodos posteriores están pendientes de planificación."
 }

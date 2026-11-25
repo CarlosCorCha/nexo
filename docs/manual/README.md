@@ -13,9 +13,11 @@ Las reservas, el plano y los catálogos todavía no forman parte del incremento 
 
 ## 1. Planificar la iteración
 
-La primera iteración abarca del 25 de noviembre al 8 de diciembre.
+La primera iteración se ajusta al periodo del 25 al 30 de noviembre para respetar el plazo del aula.
+El primer plan llegaba al 8 de diciembre; esta captura histórica conserva aquel estado y no sustituye al calendario actualizado.
 Se han seleccionado ocho elementos originales y una vista estable filtrada por esa iteración.
-El [plan de trabajo](../iteraciones/iteracion-01.md) vincula seis tareas estimadas en horas con sus elementos del backlog.
+El [plan de trabajo](../iteraciones/iteracion-01.md) desglosa veintiuna tareas estimadas en horas bajo sus ocho elementos del backlog.
+La estimación revisada es de 16 horas de referencia, sin afirmar dedicación humana real.
 Los puntos de historia y las prioridades aprobadas permanecen intactos.
 La captura siguiente corresponde al momento de la planificación, antes de terminar el incremento; su estado no pretende sustituir al tablero actual.
 
