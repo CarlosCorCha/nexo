@@ -1,0 +1,37 @@
+NEXO - PRIMER INCREMENTO: ACCESO Y PERFILES
+
+1. Extrae la carpeta completa del ZIP en una ubicacion con permiso de escritura.
+2. Ejecuta INICIAR.cmd. No es necesario instalar .NET ni preparar una base de datos.
+3. Se abrira el navegador en http://127.0.0.1:5187. Manten la consola abierta.
+4. Entra con una cuenta ficticia de demostracion:
+   Carlos / Empleado:       carlos   Nexo.Carlos2026!
+   Ana / Administradora:    ana      Nexo.Ana2026!
+5. Para detener Nexo, pulsa Ctrl+C en su ventana.
+
+Requisitos: Windows x64, navegador actual y carpeta con escritura.
+La aplicacion solo escucha en bucle local. No usa servicios cloud ni Internet.
+
+QUE SE PUEDE REVISAR
+- Acceso, perfil propio, fecha del ultimo acceso y cierre de sesion.
+- Consulta de perfiles solo para Ana. Carlos no puede acceder directamente
+  a http://127.0.0.1:5187/Administracion.
+- Reinicio: se conservan usuarios, identificadores y ultimo acceso, sin duplicados.
+Las reservas, el plano y los catalogos estan pendientes de otras iteraciones.
+
+DATOS
+La primera ejecucion crea Datos/nexo.db y Datos/claves junto al ejecutable.
+No borres esa carpeta si deseas conservar el estado.
+No ejecutes dos instancias sobre la misma carpeta.
+Para una copia tecnica, detiene Nexo y copia la carpeta Datos completa.
+El procedimiento final de copia y recuperacion se validara en su historia propia.
+
+PROBLEMAS
+- Puerto ocupado: Nexo muestra un error sin cerrar otros programas.
+  Cierra tu otra instancia o cambia el campo Port de appsettings.json.
+- Carpeta protegida: extrae el ZIP en Documentos o en otra carpeta con escritura.
+- Navegador sin apertura automatica: abre http://127.0.0.1:5187 manualmente.
+- Cinco contrasenas erroneas bloquean la cuenta durante diez minutos.
+
+FUENTES Y SEGUIMIENTO
+https://github.com/CarlosCorCha/nexo
+https://github.com/users/CarlosCorCha/projects/1/views/3

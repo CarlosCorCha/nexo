@@ -1,0 +1,31 @@
+@page
+@model Nexo.Web.Pages.Acceso.EntrarModel
+@{ ViewData["Title"] = "Acceder"; }
+<div class="login-layout">
+    <section class="welcome-panel" aria-labelledby="welcome-title">
+        <p class="eyebrow">OFICINAS HÍBRIDAS / NEXO</p>
+        <h1 id="welcome-title">Trabajar cerca.<br /><em>Coincidir mejor.</em></h1>
+        <p class="intro">El punto de encuentro para organizar los días de oficina con tu equipo.</p>
+        <div class="meeting-illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="person person-one">C</span><span class="person person-two">A</span><div class="meeting-center">nos vemos<br /><strong>aquí.</strong></div><span class="illustration-note">Más equipo, menos distancia.</span></div>
+        <p class="stage-note">En este primer incremento puedes comprobar el acceso, los perfiles y la conservación de los datos.</p>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+        <span class="section-number">01 / ACCESO</span>
+        <h2 id="login-title">Tu espacio empieza aquí</h2>
+        <p class="muted">Entra con una de las cuentas de demostración.</p>
+        <form method="post" class="login-form">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div asp-validation-summary="All" class="validation" role="alert"></div>
+            <label asp-for="Input.UserName">Usuario</label>
+            <input asp-for="Input.UserName" autocomplete="username" placeholder="Ej.: carlos" autofocus />
+            <label asp-for="Input.Password">Contraseña</label>
+            <input asp-for="Input.Password" autocomplete="current-password" />
+            <button class="button-primary" type="submit">Entrar en Nexo <span aria-hidden="true">↗</span></button>
+        </form>
+        <details class="demo-accounts" open>
+            <summary>Cuentas de demostración</summary>
+            <dl><div><dt>Carlos <span>Empleado</span></dt><dd><code>carlos</code> / <code>Nexo.Carlos2026!</code></dd></div><div><dt>Ana <span>Administradora</span></dt><dd><code>ana</code> / <code>Nexo.Ana2026!</code></dd></div></dl>
+            <p>Datos ficticios preparados para evaluar la aplicación.</p>
+        </details>
+    </section>
+</div>

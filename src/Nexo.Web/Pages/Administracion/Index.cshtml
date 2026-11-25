@@ -1,0 +1,7 @@
+@page "/Administracion"
+@model Nexo.Web.Pages.Administracion.IndexModel
+@using Nexo.Web.Infrastructure
+@{ ViewData["Title"] = "Administración"; }
+<div class="page-content"><div class="page-heading"><div><p class="eyebrow">ADMINISTRACIÓN / ACCESO</p><h1>Dos perfiles, su espacio<span class="accent">.</span></h1><p class="intro">Consulta de las cuentas preparadas para la demostración.</p></div><span class="role-badge">Solo administración</span></div>
+<section class="table-card"><div class="table-heading"><h2>Perfiles de demostración</h2><span>@Model.Accounts.Count cuentas</span></div><div class="table-scroll"><table><caption class="visually-hidden">Cuentas, perfiles y últimos accesos guardados</caption><thead><tr><th scope="col">Persona</th><th scope="col">Usuario</th><th scope="col">Perfil</th><th scope="col">Último acceso</th></tr></thead><tbody>@foreach (var account in Model.Accounts) {<tr><th scope="row">@account.Name</th><td>@account.UserName</td><td><span class="role-badge">@account.Role</span></td><td>@OfficeTime.Format(account.LastAccess)</td></tr>}</tbody></table></div></section>
+<p class="footnote">Consulta de solo lectura. Las cuentas están precargadas; este incremento no incorpora gestión de usuarios.</p><a class="text-link" asp-page="/Index">← Volver a mi espacio</a></div>

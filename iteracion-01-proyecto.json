@@ -1,0 +1,21 @@
+{
+  "url": "https://github.com/users/CarlosCorCha/projects/1/views/3?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C445366426%2C445366540%2C450438432%5D",
+  "project": "https://github.com/users/CarlosCorCha/projects/1",
+  "field": "Iteración",
+  "value": "Iteración 1",
+  "start": "2026-11-25",
+  "end": "2026-12-08",
+  "items": [
+    "GE01",
+    "GE02",
+    "ET01",
+    "ET02",
+    "ET05",
+    "HU01",
+    "HU02",
+    "HU03"
+  ],
+  "filter": "iteración:\"Iteración 1\"",
+  "status": "En curso",
+  "notes": "Solo se ha asignado trabajo a la primera iteración. Los periodos futuros generados por GitHub están vacíos y pendientes de planificación."
+}
