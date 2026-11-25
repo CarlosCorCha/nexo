@@ -1,5 +1,5 @@
 {
-  "url": "https://github.com/users/CarlosCorCha/projects/1/views/3?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C445366426%2C445366540%2C450438432%5D",
+  "url": "https://github.com/users/CarlosCorCha/projects/1/views/3",
   "project": "https://github.com/users/CarlosCorCha/projects/1",
   "field": "Iteración",
   "value": "Iteración 1",
@@ -17,5 +17,17 @@
   ],
   "filter": "iteración:\"Iteración 1\"",
   "status": "En curso",
+  "estados": {
+    "GE01": "En revisión",
+    "GE02": "En curso",
+    "ET01": "En revisión",
+    "ET02": "En curso",
+    "ET05": "En curso",
+    "HU01": "En curso",
+    "HU02": "En revisión",
+    "HU03": "En curso"
+  },
+  "revisión": "https://github.com/CarlosCorCha/nexo/pull/41",
+  "accesoPúblicoComprobado": "2026-11-25",
   "notes": "Solo se ha asignado trabajo a la primera iteración. Los periodos futuros generados por GitHub están vacíos y pendientes de planificación."
 }

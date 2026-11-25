@@ -126,6 +126,15 @@ Las primeras pruebas detectaron un problema en la limpieza de las conexiones SQL
 No se ha desconectado la red del equipo: se ha verificado que las referencias y los recursos de las páginas actuales son locales.
 La prueba sin Internet del circuito completo, incluido el plano, queda pendiente.
 
+## Seguimiento y acceso del evaluador
+
+Se ha abierto la vista de la iteración y este manual en un navegador sin sesión de GitHub.
+Ambos son accesibles para consulta pública.
+El tablero conserva ocho elementos seleccionados: tres En revisión y cinco En curso; ninguno figura como Hecho.
+El repositorio mantiene las cuarenta incidencias originales y añade una PR de implementación, sin ampliar el backlog.
+
+![Vista pública del avance tras la implementación](capturas/08-tablero-publico.jpg)
+
 ## Revisión final pendiente de Carlos
 
 - [ ] Arrancar su propia copia del ZIP y entrar con ambas cuentas.
