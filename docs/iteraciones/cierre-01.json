@@ -1,0 +1,86 @@
+{
+  "version": "0.1",
+  "fecha_preparacion": "2026-11-27",
+  "fecha_corte": "2026-11-27",
+  "inicio": "2026-11-25",
+  "cierre_previsto": "2026-11-30",
+  "estado": "Preparación del cierre; pendiente de revisión de la entrega",
+  "terminados": [
+    "GE01",
+    "ET01",
+    "HU02"
+  ],
+  "parciales": [
+    "GE02",
+    "ET02",
+    "ET05",
+    "HU01",
+    "HU03"
+  ],
+  "ph_terminados": 6,
+  "ph_totales": 121,
+  "porcentaje_avance": 4.958677685950414,
+  "horas_estimadas": 16,
+  "dedicacion_humana_confirmada": null,
+  "video": "Vídeo base de 2 minutos y 24 segundos, con capturas reales y rótulos, sin locución.",
+  "video_url": null,
+  "validaciones": [
+    {
+      "id": "V01",
+      "escenario": "URL directa de Administración con Carlos",
+      "esperado": "Rechazo en servidor y ausencia de datos de administración",
+      "resultado": "La navegación termina en /Acceso/Denegado?ReturnUrl=%2FAdministracion y muestra ACCESO / 403.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V02",
+      "escenario": "Detener y reiniciar el paquete local",
+      "esperado": "Conservar registros, identificadores, relaciones, último acceso y claves",
+      "resultado": "Dos usuarios y dos roles antes y después; igualdad de todos los campos comparados, relaciones, migración y claves. SQLite quick_check devuelve ok.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V03",
+      "escenario": "Recargar el perfil tras reiniciar",
+      "esperado": "Mantener la sesión y el último acceso sin un nuevo login",
+      "resultado": "El perfil de Carlos sigue accesible y conserva 27/11/2026 22:47, hora Europe/Madrid.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V04",
+      "escenario": "Pedir /Perfil después de cerrar sesión",
+      "esperado": "Exigir autenticación",
+      "resultado": "Redirección a /Acceso/Entrar?ReturnUrl=%2FPerfil.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V05",
+      "escenario": "Recorrido aportado por Carlos con ambos perfiles",
+      "esperado": "Acceso, perfil, navegación y salida coherentes",
+      "resultado": "Sin incidencias visibles; Ana consulta las dos cuentas y Carlos ve su perfil de empleado. La grabación no sustituye a las comprobaciones de URL y reinicio.",
+      "estado": "Correcto en el recorrido mostrado",
+      "fecha": "2026-11-27"
+    }
+  ],
+  "pruebas_previas": "El registro del 25/11 contiene 17 casos de integración y 12 comprobaciones del ZIP correctas. No se presentan como nuevas ejecuciones del 27/11.",
+  "problemas": [
+    "El primer calendario terminaba el 8 de diciembre y se ajustó al plazo del aula del 30 de noviembre, manteniendo el inicio real del 25/11. La excepción inicial de seis días queda documentada.",
+    "La revisión del vídeo no demostraba por sí sola el rechazo de una URL ni la persistencia. Se completaron ambas comprobaciones sobre el paquete real el 27/11, con resultados correctos."
+  ],
+  "retrospectiva": [
+    "Funcionó disponer de un ZIP con runtime propio y un recorrido corto con dos cuentas ficticias.",
+    "Las pruebas de servidor y de reinicio complementan la revisión visual; ocultar un menú o ver un perfil no basta para probar permisos o persistencia.",
+    "En la siguiente iteración se fijarán desde el inicio escenarios, resultados esperados y evidencias por historia. Los elementos parciales conservarán sus criterios pendientes."
+  ],
+  "pendientes_entrega": [
+    "Revisar el PDF combinado y el vídeo base",
+    "Confirmar o indicar como no cuantificada la dedicación humana",
+    "Completar los apartados finales y los enlaces antes de enviar al aula"
+  ],
+  "alcance_restante": "Modelo completo y diccionario; datos de oficina y escenarios; permisos sobre solicitudes, catálogos e informes; cinco CRUD del circuito, plano, automatismos, informes, indicadores y demás requisitos aprobados.",
+  "publicacion_evidencias": "Pendiente de autorización de Carlos para cuatro capturas y el vídeo base en GitHub público."
+}

@@ -15,19 +15,20 @@
     "HU02",
     "HU03"
   ],
-  "filter": "iteración:\"Iteración 1\"",
-  "status": "En curso",
+  "filter": "label:iteracion-01",
+  "status": "En curso; preparación del cierre",
   "estados": {
-    "GE01": "En revisión",
+    "GE01": "Hecho",
     "GE02": "En curso",
-    "ET01": "En revisión",
+    "ET01": "Hecho",
     "ET02": "En curso",
     "ET05": "En curso",
     "HU01": "En curso",
-    "HU02": "En revisión",
+    "HU02": "Hecho",
     "HU03": "En curso"
   },
   "revisión": "https://github.com/CarlosCorCha/nexo/pull/41",
   "accesoPúblicoComprobado": "2026-11-25",
-  "notes": "Primera iteración ajustada a seis días naturales (25–30/11) para cumplir el plazo del aula, sin prórroga autorizada. Se conservan los ocho elementos y sus estados; los periodos posteriores están pendientes de planificación."
+  "notes": "Tres elementos terminados y cinco parciales al 27/11. El cierre sigue previsto el 30/11. La selección de cada iteración se conserva con etiquetas; la segunda está planificada, no iniciada.",
+  "fechaCorte": "2026-11-27"
 }

@@ -189,3 +189,11 @@ El informe de cierre, el vídeo, la retrospectiva y el siguiente plan se registr
 
 La fecha orientativa de inicio de la segunda iteración es el 1 de diciembre; su selección y compromiso se fijarán tras esta revisión.
 Las estimaciones no se convierten automáticamente en dedicación real.
+
+## Revisión complementaria del 27/11/2026
+
+La [preparación del cierre](cierre-01.md) recoge el recorrido de Carlos y las comprobaciones complementarias autorizadas.
+El acceso directo de Carlos a Administración se rechaza y el reinicio conserva los datos técnicos, sus identificadores y el último acceso.
+Repositorio/seguimiento, arquitectura/contratos e inicio/salida se consideran terminados; los otros cinco elementos siguen parciales.
+Este corte actualiza la revisión pendiente descrita en el plan del 25/11, sin alterar sus registros históricos.
+El cierre previsto permanece el 30/11 y la entrega al campus no se ha realizado.

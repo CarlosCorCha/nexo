@@ -137,12 +137,31 @@ El repositorio mantiene las cuarenta incidencias originales y añade una PR de i
 
 ![Vista pública del avance tras la implementación](capturas/08-tablero-publico.jpg)
 
-## Revisión final pendiente de Carlos
+## Revisión complementaria del 27 de noviembre
 
-- [ ] Arrancar su propia copia del ZIP y entrar con ambas cuentas.
-- [ ] Comprobar perfil, salida y rechazo de administración como Carlos.
-- [ ] Confirmar que el resultado y su estética son adecuados para continuar.
-- [ ] Registrar su dedicación real y observaciones.
+Carlos aportó una grabación de su recorrido con ambas cuentas, sin incidencias visibles.
+Se completó la revisión autorizada con la URL directa de Administración como Carlos y con un reinicio del ejecutable publicado.
+La URL termina en acceso denegado 403; los registros, identificadores, roles, relaciones, migración, claves y último acceso permanecen tras reiniciar.
+La sesión sobrevive al reinicio; después de salir, una petición a Perfil exige autenticación.
+El DLL, el ejecutable, el CSS y la configuración coinciden con el ZIP validado; no se ha modificado código funcional.
 
-La aceptación, el vídeo de cinco minutos y el informe de cierre de la iteración todavía no se han registrado.
-Las historias parciales mantienen sus criterios pendientes y no se presentan como completadas.
+Los [resultados nuevos](verificacion-20261127.json) se distinguen de las diecisiete pruebas de integración y doce comprobaciones del paquete del 25/11.
+Las cuatro capturas nuevas y el vídeo base se conservan localmente; su publicación está pendiente de autorización.
+No se ha publicado la grabación original de Carlos ni su audio.
+
+## Preparación del primer cierre
+
+Repositorio y seguimiento, arquitectura y contratos, e inicio y cierre de sesión tienen sus criterios cubiertos.
+Los otros cinco elementos seleccionados siguen abiertos por sus remanentes o por las formalidades del cierre.
+El [informe preparado](../iteraciones/cierre-01.md) tiene fecha de corte 27/11 y mantiene la entrega del 30/11.
+La [segunda iteración](../iteraciones/iteracion-02.md) se planifica del 1 al 13 de diciembre, sin declararla iniciada.
+
+- [x] Recorrido de Carlos con ambas cuentas, perfil y salida.
+- [x] Verificación del acceso directo rechazado y de la persistencia tras reiniciar.
+- [ ] Revisión del PDF combinado y del vídeo base antes de entregar.
+- [ ] Confirmación o identificación como no cuantificada de la dedicación humana.
+- [ ] Publicación autorizada de las evidencias y comprobación del enlace del vídeo.
+- [ ] Completar los apartados finales de la entrega y enviarla al campus.
+
+No se registran una entrega realizada ni horas humanas no confirmadas.
+Las historias parciales conservan sus criterios pendientes.
