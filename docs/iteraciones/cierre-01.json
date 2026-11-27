@@ -21,7 +21,7 @@
   "ph_totales": 121,
   "porcentaje_avance": 4.958677685950414,
   "horas_estimadas": 16,
-  "dedicacion_humana_confirmada": null,
+  "dedicacion_humana_confirmada": 3,
   "video": "Vídeo base de 2 minutos y 24 segundos, con capturas reales y rótulos, sin locución.",
   "video_url": null,
   "validaciones": [
@@ -78,9 +78,13 @@
   ],
   "pendientes_entrega": [
     "Revisar el PDF combinado y el vídeo base",
-    "Confirmar o indicar como no cuantificada la dedicación humana",
     "Completar los apartados finales y los enlaces antes de enviar al aula"
   ],
   "alcance_restante": "Modelo completo y diccionario; datos de oficina y escenarios; permisos sobre solicitudes, catálogos e informes; cinco CRUD del circuito, plano, automatismos, informes, indicadores y demás requisitos aprobados.",
-  "publicacion_evidencias": "Pendiente de autorización de Carlos para cuatro capturas y el vídeo base en GitHub público."
+  "publicacion_evidencias": "Pendiente de autorización de Carlos para cuatro capturas y el vídeo base en GitHub público.",
+  "dedicacion_detalle": {
+    "planificacion": 2,
+    "pruebas": 1,
+    "fuente": "Confirmación de Carlos el 27/11/2026"
+  }
 }

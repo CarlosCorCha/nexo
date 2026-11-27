@@ -20,7 +20,7 @@ La revisión de Carlos se complementó el 27/11 con acceso directo denegado, rei
 | HU03 · Permisos según el perfil | En curso; aportación parcial |
 
 Avance ponderado: 6 de 121 PH, equivalente a 5,0 % redondeado. Los parciales no se computan como terminados.
-Tres de los cuarenta elementos están cerrados. Las 16 horas son estimadas; la dedicación humana no se ha confirmado.
+Tres de los cuarenta elementos están cerrados. Las 16 horas son estimadas. Carlos confirmó 3 horas personales: 2 de planificación y 1 de pruebas.
 
 ## Comprobaciones
 

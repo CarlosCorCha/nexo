@@ -28,7 +28,27 @@
     "HU03": "En curso"
   },
   "revisión": "https://github.com/CarlosCorCha/nexo/pull/41",
-  "accesoPúblicoComprobado": "2026-11-25",
+  "accesoPúblicoComprobado": "2026-11-27",
   "notes": "Tres elementos terminados y cinco parciales al 27/11. El cierre sigue previsto el 30/11. La selección de cada iteración se conserva con etiquetas; la segunda está planificada, no iniciada.",
-  "fechaCorte": "2026-11-27"
+  "fechaCorte": "2026-11-27",
+  "next_view": "https://github.com/users/CarlosCorCha/projects/1/views/4",
+  "next_filter": "label:iteracion-02",
+  "calendario": [
+    {
+      "iteracion": 1,
+      "inicio": "2026-11-25",
+      "fin": "2026-11-30"
+    },
+    {
+      "iteracion": 2,
+      "inicio": "2026-12-01",
+      "fin": "2026-12-13"
+    },
+    {
+      "iteracion": 3,
+      "inicio": "2026-12-14",
+      "fin": "2026-12-23",
+      "estado": "Periodo provisional sin selección de trabajo"
+    }
+  ]
 }

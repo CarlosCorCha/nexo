@@ -2,6 +2,7 @@
 
 Planificación 0.1 del 27/11/2026. Periodo: 1–13 de diciembre de 2026.
 Estado: planificada, pendiente de inicio. No se declaran tareas realizadas en el futuro.
+Vista de seguimiento: https://github.com/users/CarlosCorCha/projects/1/views/4
 
 Completar el modelo de dominio y los escenarios de demostración, e incorporar los mantenimientos de organización y empleados con persistencia, validaciones y autorización en servidor.
 Se incorporan dos de los cinco CRUD programados aprobados. Los veinte CRUD de diseño siguen sin programarse; no se añaden servicios cloud, registro de usuarios ni funcionalidades nuevas.

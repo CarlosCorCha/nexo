@@ -159,9 +159,9 @@ La [segunda iteración](../iteraciones/iteracion-02.md) se planifica del 1 al 13
 - [x] Recorrido de Carlos con ambas cuentas, perfil y salida.
 - [x] Verificación del acceso directo rechazado y de la persistencia tras reiniciar.
 - [ ] Revisión del PDF combinado y del vídeo base antes de entregar.
-- [ ] Confirmación o identificación como no cuantificada de la dedicación humana.
+- [x] Dedicación personal confirmada por Carlos: 2 horas de planificación y 1 hora de pruebas.
 - [ ] Publicación autorizada de las evidencias y comprobación del enlace del vídeo.
 - [ ] Completar los apartados finales de la entrega y enviarla al campus.
 
-No se registran una entrega realizada ni horas humanas no confirmadas.
+Solo se registra la dedicación confirmada por Carlos y no se declara una entrega realizada.
 Las historias parciales conservan sus criterios pendientes.
