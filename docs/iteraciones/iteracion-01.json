@@ -1,10 +1,10 @@
 {
-  "version": "0.1",
+  "version": "1.0",
   "fecha": "2026-11-25",
   "inicio": "2026-11-25",
   "fin": "2026-11-30",
   "objetivo": "Obtener y verificar un primer incremento ejecutable en Windows x64 que arranque desde una carpeta, cree y conserve su base SQLite y permita iniciar y cerrar sesión con los perfiles Empleado y Administrador.",
-  "ajuste": "Se adelanta el cierre del 8 de diciembre al 30 de noviembre para respetar el plazo del aula. El inicio permanece en el 25 de noviembre, fecha real del arranque. Esta primera iteración tiene excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días. No existe autorización de prórroga.",
+  "ajuste": "El calendario inicial finalizaba el 8 de diciembre y se ajustó al 30 de noviembre, plazo máximo del aula para esta planificación y el primer cierre. Mantengo el inicio real del 25/11. Esta primera iteración comprende excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días prevista en el backlog.",
   "estimacion_anterior_horas": 14,
   "motivo_reestimacion": "El desglose conserva el trabajo técnico y hace explícita la preparación del informe, el vídeo y la planificación siguiente. La referencia agregada pasa de 14 a 16 horas estimadas. No representa horas humanas efectivamente dedicadas ni una conversión de los puntos de historia.",
   "tablero": "https://github.com/users/CarlosCorCha/projects/1/views/3",
@@ -12,81 +12,192 @@
   "revision": "https://github.com/CarlosCorCha/nexo/pull/41",
   "elementos": [
     {
-      "id": "GE01", "issue": 1, "tratamiento": "Cierre previsto tras revisión",
+      "id": "GE01",
+      "issue": 1,
+      "tratamiento": "Cierre previsto tras revisión",
       "tareas": [
-        {"id": "GE01-T01", "nombre": "Organizar fuentes, comandos y enlaces del repositorio", "horas": 0.25},
-        {"id": "GE01-T02", "nombre": "Ajustar la vista de iteración y comprobar acceso y campos del tablero", "horas": 0.5}
+        {
+          "id": "GE01-T01",
+          "nombre": "Organizar fuentes, comandos y enlaces del repositorio",
+          "horas": 0.25
+        },
+        {
+          "id": "GE01-T02",
+          "nombre": "Ajustar la vista de iteración y comprobar acceso y campos del tablero",
+          "horas": 0.5
+        }
       ],
       "validacion": "Abrir la vista sin sesión: deben verse los ocho elementos y sus prioridades, puntos y estados. Abrir sus enlaces al código y al plan.",
       "evidencia": "Tablero público, README y captura fechada."
     },
     {
-      "id": "GE02", "issue": 2, "tratamiento": "Trabajo de gestión de esta iteración",
+      "id": "GE02",
+      "issue": 2,
+      "tratamiento": "Trabajo de gestión de esta iteración",
       "tareas": [
-        {"id": "GE02-T01", "nombre": "Formalizar objetivo, fechas, tareas y validación de la primera iteración", "horas": 1},
-        {"id": "GE02-T02", "nombre": "Preparar informe de cierre y planificación siguiente en un único PDF", "horas": 1},
-        {"id": "GE02-T03", "nombre": "Revisar el incremento, registrar retrospectiva y preparar vídeo de hasta cinco minutos", "horas": 1}
+        {
+          "id": "GE02-T01",
+          "nombre": "Formalizar objetivo, fechas, tareas y validación de la primera iteración",
+          "horas": 1
+        },
+        {
+          "id": "GE02-T02",
+          "nombre": "Preparar informe de cierre y planificación siguiente en un único PDF",
+          "horas": 1
+        },
+        {
+          "id": "GE02-T03",
+          "nombre": "Revisar el incremento, registrar retrospectiva y preparar vídeo de hasta cinco minutos",
+          "horas": 1
+        }
       ],
       "validacion": "Comparar el plan con el tablero y el avance real. Al cerrar deben existir informe, vídeo accesible, revisión, retrospectiva y plan siguiente con fechas coherentes.",
       "evidencia": "Planificación PDF; informe y vídeo pendientes del cierre."
     },
     {
-      "id": "ET01", "issue": 3, "tratamiento": "Cierre previsto tras revisión del diseño",
+      "id": "ET01",
+      "issue": 3,
+      "tratamiento": "Cierre previsto tras revisión del diseño",
       "tareas": [
-        {"id": "ET01-T01", "nombre": "Describir componentes, llamadas y separación de responsabilidades", "horas": 0.5},
-        {"id": "ET01-T02", "nombre": "Definir contratos, errores y transacciones del circuito aprobado", "horas": 0.5},
-        {"id": "ET01-T03", "nombre": "Contrastar los contratos con las reglas de reserva y los límites de implementación", "horas": 0.25}
+        {
+          "id": "ET01-T01",
+          "nombre": "Describir componentes, llamadas y separación de responsabilidades",
+          "horas": 0.5
+        },
+        {
+          "id": "ET01-T02",
+          "nombre": "Definir contratos, errores y transacciones del circuito aprobado",
+          "horas": 0.5
+        },
+        {
+          "id": "ET01-T03",
+          "nombre": "Contrastar los contratos con las reglas de reserva y los límites de implementación",
+          "horas": 0.25
+        }
       ],
       "validacion": "Revisar el diagrama y los contratos de reserva, confirmación, cancelación y asignación: entradas, resultados, errores y límites transaccionales deben estar definidos.",
       "evidencia": "docs/arquitectura.md y revisión del diseño."
     },
     {
-      "id": "ET02", "issue": 4, "tratamiento": "Aportación parcial al modelo completo",
+      "id": "ET02",
+      "issue": 4,
+      "tratamiento": "Aportación parcial al modelo completo",
       "tareas": [
-        {"id": "ET02-T01", "nombre": "Definir el esquema técnico inicial de acceso y su ubicación de datos", "horas": 0.25},
-        {"id": "ET02-T02", "nombre": "Generar y verificar la migración inicial reproducible de SQLite", "horas": 0.5}
+        {
+          "id": "ET02-T01",
+          "nombre": "Definir el esquema técnico inicial de acceso y su ubicación de datos",
+          "horas": 0.25
+        },
+        {
+          "id": "ET02-T02",
+          "nombre": "Generar y verificar la migración inicial reproducible de SQLite",
+          "horas": 0.5
+        }
       ],
       "validacion": "Arrancar sobre una carpeta vacía: se crea SQLite con la migración de acceso. Al reiniciar se conservan los registros. El modelo de dominio completo continúa pendiente.",
       "evidencia": "Migración versionada y prueba de reinicio."
     },
     {
-      "id": "ET05", "issue": 5, "tratamiento": "Aportación parcial a los datos de demostración",
+      "id": "ET05",
+      "issue": 5,
+      "tratamiento": "Aportación parcial a los datos de demostración",
       "tareas": [
-        {"id": "ET05-T01", "nombre": "Precargar Carlos como empleado y Ana como administradora", "horas": 0.25},
-        {"id": "ET05-T02", "nombre": "Comprobar que reiniciar no duplica cuentas ni restablece contraseñas existentes", "horas": 0.5}
+        {
+          "id": "ET05-T01",
+          "nombre": "Precargar Carlos como empleado y Ana como administradora",
+          "horas": 0.25
+        },
+        {
+          "id": "ET05-T02",
+          "nombre": "Comprobar que reiniciar no duplica cuentas ni restablece contraseñas existentes",
+          "horas": 0.5
+        }
       ],
       "validacion": "Arrancar dos veces: deben seguir existiendo las mismas cuentas y perfiles, sin duplicados ni pérdida de datos. Los escenarios de oficina se completarán en iteraciones posteriores.",
       "evidencia": "Inicialización y prueba automatizada de idempotencia."
     },
     {
-      "id": "HU01", "issue": 6, "tratamiento": "Aportación parcial al arranque y persistencia",
+      "id": "HU01",
+      "issue": 6,
+      "tratamiento": "Aportación parcial al arranque y persistencia",
       "tareas": [
-        {"id": "HU01-T01", "nombre": "Preparar arranque local, carpeta de datos y errores de inicio", "horas": 1},
-        {"id": "HU01-T02", "nombre": "Publicar el ZIP Windows x64 con runtime y recursos propios", "horas": 1},
-        {"id": "HU01-T03", "nombre": "Probar el ZIP extraído, el reinicio, el puerto ocupado y las instrucciones", "horas": 1.25}
+        {
+          "id": "HU01-T01",
+          "nombre": "Preparar arranque local, carpeta de datos y errores de inicio",
+          "horas": 1
+        },
+        {
+          "id": "HU01-T02",
+          "nombre": "Publicar el ZIP Windows x64 con runtime y recursos propios",
+          "horas": 1
+        },
+        {
+          "id": "HU01-T03",
+          "nombre": "Probar el ZIP extraído, el reinicio, el puerto ocupado y las instrucciones",
+          "horas": 1.25
+        }
       ],
       "validacion": "Extraer en una carpeta con escritura y ejecutar INICIAR.cmd: debe abrir el navegador local y conservar el último acceso tras reiniciar. Un puerto ocupado debe producir un error comprensible. El plano y la persistencia de reservas siguen pendientes.",
       "evidencia": "Comprobaciones del paquete y capturas de acceso y perfil."
     },
     {
-      "id": "HU02", "issue": 7, "tratamiento": "Cierre previsto tras aceptación",
+      "id": "HU02",
+      "issue": 7,
+      "tratamiento": "Cierre previsto tras aceptación",
       "tareas": [
-        {"id": "HU02-T01", "nombre": "Implementar acceso y salida con Identity, hash y sesión", "horas": 1.5},
-        {"id": "HU02-T02", "nombre": "Probar credenciales válidas e inválidas, antifalsificación y redirecciones", "horas": 1.5},
-        {"id": "HU02-T03", "nombre": "Revisar ambos perfiles en el navegador y documentar el recorrido", "horas": 0.75}
+        {
+          "id": "HU02-T01",
+          "nombre": "Implementar acceso y salida con Identity, hash y sesión",
+          "horas": 1.5
+        },
+        {
+          "id": "HU02-T02",
+          "nombre": "Probar credenciales válidas e inválidas, antifalsificación y redirecciones",
+          "horas": 1.5
+        },
+        {
+          "id": "HU02-T03",
+          "nombre": "Revisar ambos perfiles en el navegador y documentar el recorrido",
+          "horas": 0.75
+        }
       ],
       "validacion": "Carlos y Ana deben acceder con su perfil; una contraseña errónea no crea sesión ni revela la cuenta. Tras salir, /Perfil exige autenticación. Verificar hash y rechazo de peticiones sin token.",
       "evidencia": "Pruebas de acceso y capturas de ambos perfiles; aceptación pendiente."
     },
     {
-      "id": "HU03", "issue": 8, "tratamiento": "Aportación parcial a los permisos del circuito",
+      "id": "HU03",
+      "issue": 8,
+      "tratamiento": "Aportación parcial a los permisos del circuito",
       "tareas": [
-        {"id": "HU03-T01", "nombre": "Aplicar autorización en servidor a las áreas disponibles", "horas": 1},
-        {"id": "HU03-T02", "nombre": "Contrastar la matriz de permisos y la parametrización prevista en el modelo completo", "horas": 0.5},
-        {"id": "HU03-T03", "nombre": "Probar acceso directo restringido y perfil derivado de la sesión", "horas": 1}
+        {
+          "id": "HU03-T01",
+          "nombre": "Aplicar autorización en servidor a las áreas disponibles",
+          "horas": 1
+        },
+        {
+          "id": "HU03-T02",
+          "nombre": "Contrastar la matriz de permisos y la parametrización prevista en el modelo completo",
+          "horas": 0.5
+        },
+        {
+          "id": "HU03-T03",
+          "nombre": "Probar acceso directo restringido y perfil derivado de la sesión",
+          "horas": 1
+        }
       ],
       "validacion": "Con Carlos, /Administracion debe rechazarse sin datos restringidos; con Ana debe permitirse. Alterar un identificador no cambia la identidad del perfil propio. Los permisos sobre solicitudes, catálogos e informes siguen pendientes.",
       "evidencia": "Pruebas de autorización, matriz y captura de acceso rechazado."
     }
-  ]
+  ],
+  "revision_documental": {
+    "version": "1.0",
+    "fecha_preparacion": "2026-11-28",
+    "actividad": "Planificación #1",
+    "fecha_plan_inicial": "2026-11-25",
+    "fecha_cierre_prevista": "2026-11-30",
+    "envio_al_aula_realizado": false,
+    "motivo": "Presentación independiente del plan inicial; informe y planificación siguiente reservados para el cierre del 30/11."
+  },
+  "ajuste_historico_25_11": "Se adelanta el cierre del 8 de diciembre al 30 de noviembre para respetar el plazo del aula. El inicio permanece en el 25 de noviembre, fecha real del arranque. Esta primera iteración tiene excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días. No existe autorización de prórroga.",
+  "version_plan_inicial": "0.1"
 }

@@ -1,28 +1,29 @@
-# Iteración 1 · Base local y acceso
+# Planificación 1 de Nexo
 
+Versión documental 1.0 para presentación el 28/11/2026. Plan inicial elaborado el 25/11/2026.
 Periodo de trabajo: 25–30 de noviembre de 2026.
-Planificación inicial del 25/11/2026. Versión documental 0.2 revisada el 28/11/2026; conserva objetivo, selección y estimaciones.
-Vista de seguimiento: https://github.com/users/CarlosCorCha/projects/1/views/3
 
-## Objetivo y límites
+Esta entrega formaliza la planificación elaborada el 25/11/2026 para la primera iteración de Nexo. Conservo su objetivo, selección de elementos y estimaciones. El periodo termina el 30/11; los resultados y la planificación siguiente se presentarán en la actividad de cierre correspondiente.
+
+Responsable: Carlos Daniel Cordero Chaparro. Modalidad individual.
+
+## Objetivo e incremento esperado
 
 Obtener y verificar un primer incremento ejecutable en Windows x64 que arranque desde una carpeta, cree y conserve su base SQLite y permita iniciar y cerrar sesión con los perfiles Empleado y Administrador.
-La sesión y la autorización se comprueban en servidor.
-La interfaz y los estilos se sirven desde la propia carpeta.
-No se añaden funcionalidades al backlog aprobado.
 
-## Ajuste de calendario y estimación
+El incremento se centra en la estructura técnica, la persistencia inicial y el acceso. Se conserva el diseño del producto completo y la implementación prevista de cinco de sus veinticinco mantenimientos. El plano, las reservas y los catálogos se abordarán en las siguientes iteraciones.
 
-Se adelanta el cierre del 8 de diciembre al 30 de noviembre para respetar el plazo del aula. El inicio permanece en el 25 de noviembre, fecha real del arranque. Esta primera iteración tiene excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días. No existe autorización de prórroga.
-La demostración y los dos documentos correspondientes al primer cierre se prepararán para el 30/11/2026, antes de las 23:59 CET.
-La planificación se presenta en su actividad propia; el informe de cierre y la planificación siguiente comparten otro PDF.
-No se ha enviado ninguna entrega al campus ni se ha confirmado aún la aceptación del incremento.
+## Fechas y estimación
+
+El calendario inicial finalizaba el 8 de diciembre y se ajustó al 30 de noviembre, plazo máximo del aula para esta planificación y el primer cierre. Mantengo el inicio real del 25/11. Esta primera iteración comprende excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días prevista en el backlog.
+
 El desglose conserva el trabajo técnico y hace explícita la preparación del informe, el vídeo y la planificación siguiente. La referencia agregada pasa de 14 a 16 horas estimadas. No representa horas humanas efectivamente dedicadas ni una conversión de los puntos de historia.
-La duración excepcional se hace explícita porque la pauta ordinaria del backlog es de siete a veintiún días.
 
-## Selección y compromiso
+Referencia de esfuerzo: dieciséis horas estimadas para veintiuna tareas; no son horas reales ni una conversión de puntos.
 
-| Elemento original | Prioridad | PH | Tratamiento en la iteración |
+## Selección de elementos
+
+| Elemento | Prioridad | PH | Contribución prevista |
 |---|---:|---:|---|
 | [GE01 · Repositorio y tablero de seguimiento](https://github.com/CarlosCorCha/nexo/issues/1) | 100 | 1 | Cierre previsto tras revisión |
 | [GE02 · Planificación y revisión de iteraciones](https://github.com/CarlosCorCha/nexo/issues/2) | 99 | 3 | Trabajo de gestión de esta iteración |
@@ -33,160 +34,127 @@ La duración excepcional se hace explícita porque la pauta ordinaria del backlo
 | [HU02 · Inicio y cierre de sesión](https://github.com/CarlosCorCha/nexo/issues/7) | 94 | 3 | Cierre previsto tras aceptación |
 | [HU03 · Permisos según el perfil](https://github.com/CarlosCorCha/nexo/issues/8) | 93 | 3 | Aportación parcial a los permisos del circuito |
 
-Los 22 PH corresponden a los elementos de referencia, incluidos los que reciben aportaciones parciales.
-No representan 22 PH terminados ni se convierten en horas.
-No se modifican los criterios originales; los elementos parciales siguen abiertos.
+Los veintidós puntos pertenecen a los ocho elementos originales de referencia. La selección incluye aportaciones parciales; completar sus tareas técnicas no implica terminar todos los criterios del elemento transversal.
 
-## Tareas técnicas y validación
+Leyenda: HU = historia de usuario; ET = tarea técnica; GE = gestión; PH = puntos de historia; T = tarea de la iteración. La prioridad cien es la máxima.
 
-Las tareas son previsiones de esfuerzo, no un parte de dedicación humana.
-Cada tarea queda vinculada a un único elemento para evitar contar sus horas dos veces.
+## Tareas y validación previstas
 
 ### Repositorio y tablero de seguimiento
 
 Preparar Git, el repositorio y un tablero de GitHub Projects para versionar el trabajo y mantener su seguimiento.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | GE01-T01 | Organizar fuentes, comandos y enlaces del repositorio | 0,25 |
 | GE01-T02 | Ajustar la vista de iteración y comprobar acceso y campos del tablero | 0,5 |
 
-Validación: Abrir la vista sin sesión: deben verse los ocho elementos y sus prioridades, puntos y estados. Abrir sus enlaces al código y al plan.
-Evidencia prevista: Tablero público, README y captura fechada.
-Tratamiento: Cierre previsto tras revisión.
+Cierre previsto tras revisión.
+Abrir la vista sin sesión: deben verse los ocho elementos y sus prioridades, puntos y estados. Abrir sus enlaces al código y al plan.
 
 ### Planificación y revisión de iteraciones
 
 Gestionar iteraciones individuales de siete a veintiún días y adaptar el backlog con las evidencias de cada incremento.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | GE02-T01 | Formalizar objetivo, fechas, tareas y validación de la primera iteración | 1 |
 | GE02-T02 | Preparar informe de cierre y planificación siguiente en un único PDF | 1 |
 | GE02-T03 | Revisar el incremento, registrar retrospectiva y preparar vídeo de hasta cinco minutos | 1 |
 
-Validación: Comparar el plan con el tablero y el avance real. Al cerrar deben existir informe, vídeo accesible, revisión, retrospectiva y plan siguiente con fechas coherentes.
-Evidencia prevista: Planificación PDF; informe y vídeo pendientes del cierre.
-Tratamiento: Trabajo de gestión de esta iteración.
+Trabajo de gestión de esta iteración.
+Comparar el plan con el tablero y el avance real. Al cerrar deben existir informe, vídeo accesible, revisión, retrospectiva y plan siguiente con fechas coherentes.
 
 ### Arquitectura y contratos internos
 
 Definir la separación entre presentación, servicios de negocio y acceso a datos para sostener el circuito local.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | ET01-T01 | Describir componentes, llamadas y separación de responsabilidades | 0,5 |
 | ET01-T02 | Definir contratos, errores y transacciones del circuito aprobado | 0,5 |
 | ET01-T03 | Contrastar los contratos con las reglas de reserva y los límites de implementación | 0,25 |
 
-Validación: Revisar el diagrama y los contratos de reserva, confirmación, cancelación y asignación: entradas, resultados, errores y límites transaccionales deben estar definidos.
-Evidencia prevista: docs/arquitectura.md y revisión del diseño.
-Tratamiento: Cierre previsto tras revisión del diseño.
+Cierre previsto tras revisión del diseño.
+Revisar el diagrama y los contratos de reserva, confirmación, cancelación y asignación: entradas, resultados, errores y límites transaccionales deben estar definidos.
 
 ### Modelo completo y restricciones de datos
 
 Modelar el producto completo y preparar la persistencia del prototipo conservando la integridad de sus relaciones.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | ET02-T01 | Definir el esquema técnico inicial de acceso y su ubicación de datos | 0,25 |
 | ET02-T02 | Generar y verificar la migración inicial reproducible de SQLite | 0,5 |
 
-Validación: Arrancar sobre una carpeta vacía: se crea SQLite con la migración de acceso. Al reiniciar se conservan los registros. El modelo de dominio completo continúa pendiente.
-Evidencia prevista: Migración versionada y prueba de reinicio.
-Tratamiento: Aportación parcial al modelo completo.
+Aportación parcial al modelo completo.
+Arrancar sobre una carpeta vacía: se crea SQLite con la migración de acceso. Al reiniciar se conservan los registros. El modelo de dominio completo continúa pendiente.
 
 ### Datos ficticios y escenarios de demostración
 
 Preparar datos reproducibles de una organización, sede, planta, cuatro zonas y dieciséis puestos para evaluar sin información empresarial real.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | ET05-T01 | Precargar Carlos como empleado y Ana como administradora | 0,25 |
 | ET05-T02 | Comprobar que reiniciar no duplica cuentas ni restablece contraseñas existentes | 0,5 |
 
-Validación: Arrancar dos veces: deben seguir existiendo las mismas cuentas y perfiles, sin duplicados ni pérdida de datos. Los escenarios de oficina se completarán en iteraciones posteriores.
-Evidencia prevista: Inicialización y prueba automatizada de idempotencia.
-Tratamiento: Aportación parcial a los datos de demostración.
+Aportación parcial a los datos de demostración.
+Arrancar dos veces: deben seguir existiendo las mismas cuentas y perfiles, sin duplicados ni pérdida de datos. Los escenarios de oficina se completarán en iteraciones posteriores.
 
 ### Arranque local y persistencia
 
 Como evaluador, quiero arrancar Nexo en mi equipo y conservar sus datos para revisar el circuito sin preparar un entorno de desarrollo.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | HU01-T01 | Preparar arranque local, carpeta de datos y errores de inicio | 1 |
 | HU01-T02 | Publicar el ZIP Windows x64 con runtime y recursos propios | 1 |
 | HU01-T03 | Probar el ZIP extraído, el reinicio, el puerto ocupado y las instrucciones | 1,25 |
 
-Validación: Extraer en una carpeta con escritura y ejecutar INICIAR.cmd: debe abrir el navegador local y conservar el último acceso tras reiniciar. Un puerto ocupado debe producir un error comprensible. El plano y la persistencia de reservas siguen pendientes.
-Evidencia prevista: Comprobaciones del paquete y capturas de acceso y perfil.
-Tratamiento: Aportación parcial al arranque y persistencia.
+Aportación parcial al arranque y persistencia.
+Extraer en una carpeta con escritura y ejecutar INICIAR.cmd: debe abrir el navegador local y conservar el último acceso tras reiniciar. Un puerto ocupado debe producir un error comprensible. El plano y la persistencia de reservas siguen pendientes.
 
 ### Inicio y cierre de sesión
 
 Como usuario de demostración, quiero identificarme y cerrar la sesión para acceder con mi perfil y proteger mis operaciones.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | HU02-T01 | Implementar acceso y salida con Identity, hash y sesión | 1,5 |
 | HU02-T02 | Probar credenciales válidas e inválidas, antifalsificación y redirecciones | 1,5 |
 | HU02-T03 | Revisar ambos perfiles en el navegador y documentar el recorrido | 0,75 |
 
-Validación: Carlos y Ana deben acceder con su perfil; una contraseña errónea no crea sesión ni revela la cuenta. Tras salir, /Perfil exige autenticación. Verificar hash y rechazo de peticiones sin token.
-Evidencia prevista: Pruebas de acceso y capturas de ambos perfiles; aceptación pendiente.
-Tratamiento: Cierre previsto tras aceptación.
+Cierre previsto tras aceptación.
+Carlos y Ana deben acceder con su perfil; una contraseña errónea no crea sesión ni revela la cuenta. Tras salir, /Perfil exige autenticación. Verificar hash y rechazo de peticiones sin token.
 
 ### Permisos según el perfil
 
 Como empleado, quiero gestionar mis solicitudes y consultar mi equipo, mientras la administración queda reservada al perfil autorizado.
 
-| Tarea | Resultado de trabajo | Horas estimadas |
+| Tarea | Trabajo previsto | Horas estimadas |
 |---|---|---:|
 | HU03-T01 | Aplicar autorización en servidor a las áreas disponibles | 1 |
 | HU03-T02 | Contrastar la matriz de permisos y la parametrización prevista en el modelo completo | 0,5 |
 | HU03-T03 | Probar acceso directo restringido y perfil derivado de la sesión | 1 |
 
-Validación: Con Carlos, /Administracion debe rechazarse sin datos restringidos; con Ana debe permitirse. Alterar un identificador no cambia la identidad del perfil propio. Los permisos sobre solicitudes, catálogos e informes siguen pendientes.
-Evidencia prevista: Pruebas de autorización, matriz y captura de acceso rechazado.
-Tratamiento: Aportación parcial a los permisos del circuito.
+Aportación parcial a los permisos del circuito.
+Con Carlos, /Administracion debe rechazarse sin datos restringidos; con Ana debe permitirse. Alterar un identificador no cambia la identidad del perfil propio. Los permisos sobre solicitudes, catálogos e informes siguen pendientes.
 
-## Contratos y comportamiento esperado
+## Condiciones de aceptación del incremento
 
-- Las reglas y los permisos se aplican en ASP.NET Core, desde cualquier cliente.
-- Identity valida las credenciales y crea la sesión; EF Core persiste en SQLite.
-- Los datos y claves se conservan en Datos, junto al ejecutable, salvo configuración explícita.
-- La inicialización no duplica usuarios ni restablece sus contraseñas.
-- El servidor solo escucha en 127.0.0.1 y no cierra procesos que ocupen el puerto.
-- El perfil propio se deriva de la sesión; una petición POST sin token se rechaza.
-- Los permisos completos sobre reservas, catálogos e informes se verifican cuando exista ese circuito.
-- Debe contrastarse la parametrización de perfiles y tareas con el modelo completo antes de cerrar la historia de permisos.
+El servidor aplicará autenticación y autorización; las comprobaciones de URL directa complementarán la navegación con ambos perfiles.
+El arranque creará SQLite y las cuentas ausentes, conservará los datos al reiniciar y mostrará errores comprensibles sin cerrar procesos ajenos.
+Cada comprobación se relacionará con el criterio original, los datos utilizados y el resultado obtenido. Un criterio sin cubrir mantendrá abierto su elemento.
+El modelo completo de oficina, la persistencia de reservas, el plano y los permisos sobre el circuito de negocio conservan sus validaciones futuras.
 
-## Evidencias disponibles y revisión
+## Entrega del cierre
 
-El registro histórico del 25/11/2026 contiene 17 casos de integración y 12 comprobaciones del ZIP correctas. El informe de corte del 28/11 registra la nueva ejecución sobre I01.1.
-Los resultados no sustituyen a la aceptación final de Carlos ni a la validación del plano, las reservas o el modelo completo.
-La red del equipo no se desconectó: se comprobaron recursos locales; el recorrido sin Internet queda pendiente.
-Carlos establece prioridades y verifica el incremento antes de aceptarlo.
-Codex asiste en implementación, pruebas y documentación; los registros describen acciones y resultados reales.
-El informe de cierre, el vídeo, la retrospectiva y el siguiente plan se registrarán cuando se realicen.
+El 30/11 presentaré el informe de la primera iteración y la planificación de la segunda en un único PDF, dentro de su propia actividad. Ese cierre incluirá los resultados, incidencias, dedicación registrada, revisión y retrospectiva, además del enlace accesible a un vídeo de hasta cinco minutos.
 
-| Fecha | Avance comprobado | Evidencia | Dedicación humana |
-|---|---|---|---|
-| 25/11/2026 | Estructura, acceso, SQLite y paquete local | Fuentes y migración versionadas | Pendiente de registrar por Carlos |
-| 25/11/2026 | 17 pruebas de integración y 12 comprobaciones del ZIP correctas | [Informe](../manual/verificacion.json) | Pendiente de registrar por Carlos |
-| 25/11/2026 | Recorrido visual de ambos perfiles y capturas | [Manual](../manual/README.md) | Pendiente de registrar por Carlos |
-| 25/11/2026 | Ajuste al 30/11 y desglose de tareas por elemento | Planificación 0.1 y tablero | Pendiente de registrar por Carlos |
+Esta planificación contiene el trabajo previsto. El estado de ejecución se conserva en el tablero y en los registros fechados; no se presenta como parte del informe de cierre.
 
-## Preparación del cierre del 30 de noviembre
+[Vista de la primera iteración](https://github.com/users/CarlosCorCha/projects/1/views/3)
+[Código del incremento de referencia](https://github.com/CarlosCorCha/nexo/tree/d3cd4f3576354fd0f5496f30299214242a5e278e)
 
-- Revisión de Carlos sobre acceso con ambos perfiles, reinicio y rechazo de administración para el empleado.
-- Registrar solo los elementos y criterios efectivamente aceptados; mantener los remanentes abiertos.
-- Completar el informe de avance con resultados, problemas, retrospectiva y próxima planificación.
-- Grabar y comprobar el acceso al vídeo real de hasta cinco minutos.
-- Incluir enlaces a tablero, repositorio y vídeo en el texto de la entrega del aula.
-- Completar los apartados finales de la entrega antes de enviarla.
-
-La segunda iteración está planificada del 1 al 13 de diciembre; su selección consta en el informe combinado y todavía no se ha iniciado.
-El informe del 28/11 incorpora tres horas personales confirmadas el 27/11: dos de planificación y una de pruebas. Las filas históricas conservan el estado de su fecha; no asignan esas horas a una jornada concreta.
-Las estimaciones no se convierten automáticamente en dedicación real.
+Referencia académica: Sobre la planificación y cierre de las iteraciones, disponible en Materiales de la práctica.
