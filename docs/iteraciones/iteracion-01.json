@@ -1,12 +1,12 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "fecha": "2026-11-25",
   "inicio": "2026-11-25",
   "fin": "2026-11-30",
   "objetivo": "Obtener y verificar un primer incremento ejecutable en Windows x64 que arranque desde una carpeta, cree y conserve su base SQLite y permita iniciar y cerrar sesión con los perfiles Empleado y Administrador.",
   "ajuste": "El calendario inicial finalizaba el 8 de diciembre y se ajustó al 30 de noviembre, plazo máximo del aula para esta planificación y el primer cierre. Mantengo el inicio real del 25/11. Esta primera iteración comprende excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días prevista en el backlog.",
   "estimacion_anterior_horas": 14,
-  "motivo_reestimacion": "El desglose conserva el trabajo técnico y hace explícita la preparación del informe, el vídeo y la planificación siguiente. La referencia agregada pasa de 14 a 16 horas estimadas. No representa horas humanas efectivamente dedicadas ni una conversión de los puntos de historia.",
+  "motivo_reestimacion": "Las 21 tareas suman 16 horas estimadas. La referencia agregada pasa de 14 a 16 al explicitar dos tareas de gestión ya cubiertas por el backlog: preparar el informe con la planificación siguiente (1 h estimada), y revisar el incremento con retrospectiva y vídeo (1 h estimada). Son previsiones de esfuerzo; no registran horas trabajadas.",
   "tablero": "https://github.com/users/CarlosCorCha/projects/1/views/3",
   "repositorio": "https://github.com/CarlosCorCha/nexo",
   "revision": "https://github.com/CarlosCorCha/nexo/pull/41",
@@ -190,14 +190,15 @@
     }
   ],
   "revision_documental": {
-    "version": "1.0",
+    "version": "1.1",
     "fecha_preparacion": "2026-11-28",
     "actividad": "Planificación #1",
     "fecha_plan_inicial": "2026-11-25",
     "fecha_cierre_prevista": "2026-11-30",
     "envio_al_aula_realizado": false,
-    "motivo": "Presentación independiente del plan inicial; informe y planificación siguiente reservados para el cierre del 30/11."
+    "motivo": "Aclarar la naturaleza estimada de las horas y su relación con los puntos originales, sin cambiar tareas, importes, prioridades, criterios ni fechas."
   },
   "ajuste_historico_25_11": "Se adelanta el cierre del 8 de diciembre al 30 de noviembre para respetar el plazo del aula. El inicio permanece en el 25 de noviembre, fecha real del arranque. Esta primera iteración tiene excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días. No existe autorización de prórroga.",
-  "version_plan_inicial": "0.1"
+  "version_plan_inicial": "0.1",
+  "naturaleza_horas": "Estimación de esfuerzo previsto por tarea. No son horas personales realizadas ni una conversión de puntos de historia."
 }

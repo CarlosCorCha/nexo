@@ -1,6 +1,6 @@
 # Planificación 1 de Nexo
 
-Versión documental 1.0 para presentación el 28/11/2026. Plan inicial elaborado el 25/11/2026.
+Versión documental 1.1 para presentación el 28/11/2026. Plan inicial elaborado el 25/11/2026.
 Periodo de trabajo: 25–30 de noviembre de 2026.
 
 Esta entrega formaliza la planificación elaborada el 25/11/2026 para la primera iteración de Nexo. Conservo su objetivo, selección de elementos y estimaciones. El periodo termina el 30/11; los resultados y la planificación siguiente se presentarán en la actividad de cierre correspondiente.
@@ -17,9 +17,9 @@ El incremento se centra en la estructura técnica, la persistencia inicial y el 
 
 El calendario inicial finalizaba el 8 de diciembre y se ajustó al 30 de noviembre, plazo máximo del aula para esta planificación y el primer cierre. Mantengo el inicio real del 25/11. Esta primera iteración comprende excepcionalmente seis días naturales; las siguientes recuperarán la duración ordinaria de siete a veintiún días prevista en el backlog.
 
-El desglose conserva el trabajo técnico y hace explícita la preparación del informe, el vídeo y la planificación siguiente. La referencia agregada pasa de 14 a 16 horas estimadas. No representa horas humanas efectivamente dedicadas ni una conversión de los puntos de historia.
+Las 21 tareas suman 16 horas estimadas. La referencia agregada pasa de 14 a 16 al explicitar dos tareas de gestión ya cubiertas por el backlog: preparar el informe con la planificación siguiente (1 h estimada), y revisar el incremento con retrospectiva y vídeo (1 h estimada). Son previsiones de esfuerzo; no registran horas trabajadas.
 
-Referencia de esfuerzo: dieciséis horas estimadas para veintiuna tareas; no son horas reales ni una conversión de puntos.
+Las horas son estimaciones del esfuerzo previsto para las tareas de esta iteración. No son un registro de horas trabajadas por mí. La dedicación real se documentará por separado en el informe de cierre.
 
 ## Selección de elementos
 
@@ -34,7 +34,7 @@ Referencia de esfuerzo: dieciséis horas estimadas para veintiuna tareas; no son
 | [HU02 · Inicio y cierre de sesión](https://github.com/CarlosCorCha/nexo/issues/7) | 94 | 3 | Cierre previsto tras aceptación |
 | [HU03 · Permisos según el perfil](https://github.com/CarlosCorCha/nexo/issues/8) | 93 | 3 | Aportación parcial a los permisos del circuito |
 
-Los veintidós puntos pertenecen a los ocho elementos originales de referencia. La selección incluye aportaciones parciales; completar sus tareas técnicas no implica terminar todos los criterios del elemento transversal.
+Los 22 PH conservan la estimación relativa de los ocho elementos completos del backlog. Las 16 horas estimadas cubren solo las tareas seleccionadas para esta iteración, incluidas las aportaciones parciales. No se convierten puntos en horas ni se dan por terminados los elementos que mantengan criterios pendientes.
 
 Leyenda: HU = historia de usuario; ET = tarea técnica; GE = gestión; PH = puntos de historia; T = tarea de la iteración. La prioridad cien es la máxima.
 
