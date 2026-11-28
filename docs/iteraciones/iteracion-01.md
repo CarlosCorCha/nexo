@@ -1,7 +1,7 @@
 # Iteración 1 · Base local y acceso
 
 Periodo de trabajo: 25–30 de noviembre de 2026.
-Versión de planificación: 0.1, revisada el 25/11/2026.
+Planificación inicial del 25/11/2026. Versión documental 0.2 revisada el 28/11/2026; conserva objetivo, selección y estimaciones.
 Vista de seguimiento: https://github.com/users/CarlosCorCha/projects/1/views/3
 
 ## Objetivo y límites
@@ -164,7 +164,7 @@ Tratamiento: Aportación parcial a los permisos del circuito.
 
 ## Evidencias disponibles y revisión
 
-Las pruebas del 25/11/2026 registran 17 casos de integración y 12 comprobaciones del ZIP correctas.
+El registro histórico del 25/11/2026 contiene 17 casos de integración y 12 comprobaciones del ZIP correctas. El informe de corte del 28/11 registra la nueva ejecución sobre I01.1.
 Los resultados no sustituyen a la aceptación final de Carlos ni a la validación del plano, las reservas o el modelo completo.
 La red del equipo no se desconectó: se comprobaron recursos locales; el recorrido sin Internet queda pendiente.
 Carlos establece prioridades y verifica el incremento antes de aceptarlo.
@@ -187,13 +187,6 @@ El informe de cierre, el vídeo, la retrospectiva y el siguiente plan se registr
 - Incluir enlaces a tablero, repositorio y vídeo en el texto de la entrega del aula.
 - Completar los apartados finales de la entrega antes de enviarla.
 
-La fecha orientativa de inicio de la segunda iteración es el 1 de diciembre; su selección y compromiso se fijarán tras esta revisión.
+La segunda iteración está planificada del 1 al 13 de diciembre; su selección consta en el informe combinado y todavía no se ha iniciado.
+El informe del 28/11 incorpora tres horas personales confirmadas el 27/11: dos de planificación y una de pruebas. Las filas históricas conservan el estado de su fecha; no asignan esas horas a una jornada concreta.
 Las estimaciones no se convierten automáticamente en dedicación real.
-
-## Revisión complementaria del 27/11/2026
-
-La [preparación del cierre](cierre-01.md) recoge el recorrido de Carlos y las comprobaciones complementarias autorizadas.
-El acceso directo de Carlos a Administración se rechaza y el reinicio conserva los datos técnicos, sus identificadores y el último acceso.
-Repositorio/seguimiento, arquitectura/contratos e inicio/salida se consideran terminados; los otros cinco elementos siguen parciales.
-Este corte actualiza la revisión pendiente descrita en el plan del 25/11, sin alterar sus registros históricos.
-El cierre previsto permanece el 30/11 y la entrega al campus no se ha realizado.

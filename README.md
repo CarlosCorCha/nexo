@@ -52,3 +52,19 @@ Las migraciones se aplican al arrancar; no se precisa un comando de creación ma
 
 Carlos prioriza y verifica el incremento antes de aceptarlo.
 Se utiliza asistencia de Codex para implementar, comprobar y documentar el software.
+
+## Versión de referencia de la primera entrega
+
+I01.1, comprobada el 28 de noviembre de 2026, incorpora la interfaz revisada y conserva el alcance de acceso y persistencia técnica.
+La rama principal contiene las fuentes de referencia tras la integración de la revisión.
+El paquete que acompaña a la entrega es `Nexo-I01.1-win-x64.zip`.
+Se entrega en la carpeta de la asignatura; su SHA-256 y las huellas de las fuentes constan en el [manifiesto de versión](docs/entregas/I01.1.json).
+Los paquetes anteriores y el ZIP de reproducción del manual son evidencias históricas identificadas en ese manifiesto.
+
+- [Criterio aprobado, comprobación, resultado y remanente](docs/iteraciones/trazabilidad-01.md).
+- [Diecisiete pruebas de integración y doce comprobaciones del ZIP](docs/manual/verificacion-I01.1.json).
+- [Informe de avance y próxima planificación](docs/iteraciones/cierre-01.md).
+- [Guía de creación y decisiones de implementación](docs/manual/creacion-paso-a-paso.md).
+
+Las capturas nuevas se incluyen en el manual Word y PDF; se mantienen locales mientras su publicación externa no esté autorizada.
+La entrega conserva como pendientes finales el vídeo comentado y la revisión de la declaración de IA.

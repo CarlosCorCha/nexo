@@ -1,50 +1,44 @@
-# Informe 1 · Preparación del cierre y planificación 2
+# Informe 1 y planificación 2 de Nexo
 
-Preparado el 27 de noviembre de 2026. Periodo previsto de la primera iteración: 25–30 de noviembre.
-Estado: revisión de la entrega; no se ha enviado al campus.
+Versión documental 0.2. Incremento I01.1. Corte real: 28/11/2026. Cierre previsto: 30/11/2026.
 
-## Resultado disponible
+El incremento conserva el arranque local, SQLite y acceso con Carlos y Ana. La interfaz revisada y el paquete de referencia se comprobaron de nuevo el 28 de noviembre. La entrega sigue pendiente de su vídeo definitivo y la revisión final de la declaración de IA, aplazados por Carlos.
 
-Arranque local Windows x64, SQLite y acceso con Carlos (Empleado) y Ana (Administrador).
-La revisión de Carlos se complementó el 27/11 con acceso directo denegado, reinicio con datos conservados y protección de páginas tras salir.
+## Avance y evidencia
 
-| Elemento | Estado al 27/11 |
+| Elemento | Estado al corte |
 |---|---|
-| GE01 · Repositorio y tablero de seguimiento | Hecho |
-| GE02 · Planificación y revisión de iteraciones | En curso; aportación parcial |
-| ET01 · Arquitectura y contratos internos | Hecho |
-| ET02 · Modelo completo y restricciones de datos | En curso; aportación parcial |
-| ET05 · Datos ficticios y escenarios de demostración | En curso; aportación parcial |
-| HU01 · Arranque local y persistencia | En curso; aportación parcial |
-| HU02 · Inicio y cierre de sesión | Hecho |
-| HU03 · Permisos según el perfil | En curso; aportación parcial |
+| GE01 | Hecho |
+| GE02 | En curso; remanente pendiente |
+| ET01 | Hecho |
+| ET02 | En curso; remanente pendiente |
+| ET05 | En curso; remanente pendiente |
+| HU01 | En curso; remanente pendiente |
+| HU02 | Hecho |
+| HU03 | En curso; remanente pendiente |
 
-Avance ponderado: 6 de 121 PH, equivalente a 5,0 % redondeado. Los parciales no se computan como terminados.
-Tres de los cuarenta elementos están cerrados. Las 16 horas son estimadas. Carlos confirmó 3 horas personales: 2 de planificación y 1 de pruebas.
+Avance: seis puntos de ciento veintiuno, equivalente al 5,0 % redondeado. No se suman aportaciones parciales.
 
-## Comprobaciones
+[Matriz completa de diecinueve criterios y veintiuna tareas](trazabilidad-01.md) · [Manifiesto de versión](../entregas/I01.1.json) · [Resultados de I01.1](../manual/verificacion-I01.1.json)
 
-| Prueba | Resultado |
-|---|---|
-| V01 · URL directa de Administración con Carlos | La navegación termina en /Acceso/Denegado?ReturnUrl=%2FAdministracion y muestra ACCESO / 403. |
-| V02 · Detener y reiniciar el paquete local | Dos usuarios y dos roles antes y después; igualdad de todos los campos comparados, relaciones, migración y claves. SQLite quick_check devuelve ok. |
-| V03 · Recargar el perfil tras reiniciar | El perfil de Carlos sigue accesible y conserva 27/11/2026 22:47, hora Europe/Madrid. |
-| V04 · Pedir /Perfil después de cerrar sesión | Redirección a /Acceso/Entrar?ReturnUrl=%2FPerfil. |
-| V05 · Recorrido aportado por Carlos con ambos perfiles | Sin incidencias visibles; Ana consulta las dos cuentas y Carlos ve su perfil de empleado. La grabación no sustituye a las comprobaciones de URL y reinicio. |
+Nueva ejecución del 28/11: compilación sin errores ni advertencias, diecisiete casos de integración y doce comprobaciones del ZIP correctas. El recorrido visual comprueba ambos perfiles, la URL restringida y las páginas adaptadas a móvil. Los registros del 25 y 27 se conservan con su fecha y versión propias.
 
-[Resultados y procedencia de las capturas](../manual/verificacion-20261127.json).
-El registro del 25/11 contiene 17 casos de integración y 12 comprobaciones del ZIP correctas. No se presentan como nuevas ejecuciones del 27/11.
+## Gestión del esfuerzo y calendario
 
-## Problemas y retrospectiva
+La estimación de dieciséis horas corresponde al trabajo completo previsto. Carlos confirmó tres horas personales: dos de planificación y una de pruebas. No existe un registro completo del tiempo de implementación asistida; estos ámbitos no permiten calcular trece horas de ahorro ni una desviación porcentual.
 
-El primer calendario terminaba el 8 de diciembre y se ajustó al plazo del aula del 30 de noviembre, manteniendo el inicio real del 25/11. La excepción inicial de seis días queda documentada.
-La revisión del vídeo no demostraba por sí sola el rechazo de una URL ni la persistencia. Se completaron ambas comprobaciones sobre el paquete real el 27/11, con resultados correctos.
+El calendario inicial terminaba el 8 de diciembre y se corrigió al 30 de noviembre respetando el inicio real del día 25. La duración inicial de seis días es una excepción documentada a la duración ordinaria del backlog. La segunda iteración mantiene el periodo del 1 al 13 de diciembre.
 
-Funcionó disponer de un ZIP con runtime propio y un recorrido corto con dos cuentas ficticias.
-Las pruebas de servidor y de reinicio complementan la revisión visual; ocultar un menú o ver un perfil no basta para probar permisos o persistencia.
-En la siguiente iteración se fijarán desde el inicio escenarios, resultados esperados y evidencias por historia. Los elementos parciales conservarán sus criterios pendientes.
+## Revisión y retrospectiva
 
-## Planificación siguiente
+El paquete autocontenido y las dos cuentas ficticias facilitan la evaluación. La prueba de servidor y de reinicio complementa la revisión visual. En los siguientes incrementos se registrará desde el principio cada criterio, escenario, resultado y versión. El modelo completo de oficina, el plano y las reservas conservan sus criterios pendientes.
 
-[Segunda iteración, del 1 al 13 de diciembre](iteracion-02.md).
-El vídeo base y el PDF combinado se preparan para revisión. Su versión final y el acceso al vídeo deben comprobarse antes de la entrega del 30/11.
+## Próximo periodo
+
+La [segunda planificación](iteracion-02.md) selecciona siete elementos originales, diecinueve tareas y catorce horas estimadas. Permanece planificada, sin iniciar. Incluye el modelo completo, datos de demostración y los mantenimientos de organización y empleados, además de remanentes técnicos del acceso y permisos.
+
+## Pendientes antes de enviar
+
+- Incorporar el vídeo definitivo comentado por Carlos y su enlace accesible, con duración máxima de cinco minutos.
+- Revisar la declaración de IA y el acceso a los prompts de acuerdo con las instrucciones de las clases.
+- Verificar de nuevo los enlaces y obtener la aceptación final de Carlos.

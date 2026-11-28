@@ -1,8 +1,25 @@
 # Manual de implementación · Primer incremento
 
 Nexo · Oficinas híbridas.
-Evidencias del trabajo realizado el 25 de noviembre de 2026.
+Revisión vigente del 28 de noviembre de 2026. Incremento de referencia I01.1.
+Los apartados históricos conservan expresamente sus fechas y paquetes originales.
 Este manual se ampliará a medida que se implemente el backlog.
+
+## Creación de la aplicación y de SQLite paso a paso
+
+La [guía de creación](creacion-paso-a-paso.md) completa este manual con los comandos, la configuración y cinco capturas anotadas de una reproducción real del 28/11/2026.
+Parte de una carpeta nueva, incorpora las fuentes locales de Nexo, genera una migración independiente y verifica la creación de SQLite, las cuentas precargadas, el reinicio, las pruebas y el ZIP.
+Las imágenes de comandos muestran los registros originales abiertos en Bloc de notas; la imagen de la aplicación procede del navegador.
+Los resultados de esta reproducción son 17 pruebas de integración correctas y 12 comprobaciones correctas del ZIP reconstruido.
+El [manifiesto de evidencias](creacion/evidencias.json) relaciona resultados, fechas, registros y capturas.
+Para repetirlo se utiliza scripts/reproducir-creacion.ps1 desde la raíz de las fuentes, con otro destino dentro de artifacts para conservar los resultados previos.
+La reproducción conserva el alcance de acceso y persistencia técnica; el modelo de oficina y reservas sigue pendiente.
+
+## Versión consolidada del 28 de noviembre
+
+El [manifiesto I01.1](../entregas/I01.1.json) identifica las fuentes y el ZIP de referencia.
+Las [pruebas de esta versión](verificacion-I01.1.json) y la [matriz por criterio y tarea](../iteraciones/trazabilidad-01.md) son las evidencias vigentes.
+El manual Word y PDF 1.1 añade las decisiones de implementación y conserva cinco capturas de la reproducción didáctica, identificada por separado.
 
 ## Resultado disponible
 
@@ -10,6 +27,10 @@ La aplicación arranca desde una carpeta, crea SQLite y permite acceder como Car
 Las cuentas y el último acceso se conservan al reiniciar.
 La autorización se aplica en servidor y el cierre de sesión exige un POST con token antifalsificación.
 Las reservas, el plano y los catálogos todavía no forman parte del incremento ejecutable.
+
+## Evidencias históricas del 25 de noviembre
+
+Las capturas siguientes muestran la versión y el plan de aquella fecha. No sustituyen al manifiesto vigente ni a sus resultados.
 
 ## 1. Planificar la iteración
 
@@ -149,7 +170,7 @@ Los [resultados nuevos](verificacion-20261127.json) se distinguen de las diecisi
 Las cuatro capturas nuevas y el vídeo base se conservan localmente; su publicación está pendiente de autorización.
 No se ha publicado la grabación original de Carlos ni su audio.
 
-## Preparación del primer cierre
+## Preparación del primer cierre con corte del 27 de noviembre
 
 Repositorio y seguimiento, arquitectura y contratos, e inicio y cierre de sesión tienen sus criterios cubiertos.
 Los otros cinco elementos seleccionados siguen abiertos por sus remanentes o por las formalidades del cierre.
@@ -165,3 +186,33 @@ La [segunda iteración](../iteraciones/iteracion-02.md) se planifica del 1 al 13
 
 Solo se registra la dedicación confirmada por Carlos y no se declara una entrega realizada.
 Las historias parciales conservan sus criterios pendientes.
+
+## Primera revisión local de interfaz del 28 de noviembre
+
+Se ha preparado una vista previa independiente con una navegación que identifica la página actual, instrucciones de acceso más claras y nuevas tarjetas de perfil y administración.
+Se conserva la identidad visual de Nexo y las funciones futuras se distinguen de las disponibles.
+La aplicación evita presentar sus fases de desarrollo como instrucciones para la persona que la utiliza.
+La explicación técnica permanece en este manual.
+
+La compilación Release terminó sin errores ni advertencias y las diecisiete pruebas de integración existentes fueron correctas.
+Se recorrieron el acceso incorrecto, las dos cuentas, el perfil, el rechazo de Administración para Carlos, la consulta permitida para Ana y la salida.
+Las mediciones del navegador a 390 píxeles no mostraron desbordamiento horizontal de la página.
+La tabla tiene desplazamiento propio y admite teclado; el foco del formulario es visible.
+
+La captura de acceso sí se obtuvo y revisó.
+La revisión visual de inicio, perfil, administración y móvil sigue pendiente: el navegador permite navegar y consultar el DOM, pero agota el tiempo al devolver sus capturas.
+Una comprobación del DOM no se presenta como revisión visual de esas pantallas.
+Los [resultados de esta revisión](interfaz-20261128.json) conservan esa distinción.
+
+El paquete anterior, su vídeo y el informe mantienen la versión que ya fue validada.
+Esta vista previa utiliza su propia carpeta de datos y se prepara para recibir feedback antes de incorporarla a esos entregables.
+No se han publicado las nuevas capturas ni el vídeo base.
+
+## Resolución de la revisión y versión de referencia
+
+La revisión posterior de I01.1 del 28/11 resuelve el pendiente de capturas de la primera sesión.
+Se revisaron visualmente acceso, inicio, perfil, administración y móvil en el navegador, sobre el ejecutable publicado y con datos ficticios separados.
+El manifiesto vigente identifica sus capturas por nombre y SHA-256; los medios permanecen locales.
+El informe tiene ahora corte del 28/11 e identifica el mismo ZIP I01.1 que las pruebas nuevas.
+El vídeo definitivo comentado y la revisión de la declaración de IA se completarán al final, por indicación de Carlos.
+Los apartados anteriores se conservan como registros fechados de las revisiones previas.
