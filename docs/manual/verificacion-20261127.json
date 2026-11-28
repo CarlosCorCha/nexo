@@ -1,0 +1,101 @@
+{
+  "fecha": "2026-11-27",
+  "metodo": "Navegador con la cuenta Carlos, reinicio del ejecutable publicado y comparación SQLite en modo de solo lectura.",
+  "validaciones": [
+    {
+      "id": "V01",
+      "escenario": "URL directa de Administración con Carlos",
+      "esperado": "Rechazo en servidor y ausencia de datos de administración",
+      "resultado": "La navegación termina en /Acceso/Denegado?ReturnUrl=%2FAdministracion y muestra ACCESO / 403.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V02",
+      "escenario": "Detener y reiniciar el paquete local",
+      "esperado": "Conservar registros, identificadores, relaciones, último acceso y claves",
+      "resultado": "Dos usuarios y dos roles antes y después; igualdad de todos los campos comparados, relaciones, migración y claves. SQLite quick_check devuelve ok.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V03",
+      "escenario": "Recargar el perfil tras reiniciar",
+      "esperado": "Mantener la sesión y el último acceso sin un nuevo login",
+      "resultado": "El perfil de Carlos sigue accesible y conserva 27/11/2026 22:47, hora Europe/Madrid.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V04",
+      "escenario": "Pedir /Perfil después de cerrar sesión",
+      "esperado": "Exigir autenticación",
+      "resultado": "Redirección a /Acceso/Entrar?ReturnUrl=%2FPerfil.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V05",
+      "escenario": "Recorrido aportado por Carlos con ambos perfiles",
+      "esperado": "Acceso, perfil, navegación y salida coherentes",
+      "resultado": "Sin incidencias visibles; Ana consulta las dos cuentas y Carlos ve su perfil de empleado. La grabación no sustituye a las comprobaciones de URL y reinicio.",
+      "estado": "Correcto en el recorrido mostrado",
+      "fecha": "2026-11-27"
+    }
+  ],
+  "comparacion": {
+    "users": true,
+    "roles": true,
+    "relations": true,
+    "migrations": true,
+    "keys": true,
+    "integrity": true
+  },
+  "usuarios_antes": 2,
+  "usuarios_despues": 2,
+  "roles_antes": 2,
+  "roles_despues": 2,
+  "sqlite_integridad": "ok",
+  "ultimo_acceso_carlos_utc": "2026-11-27 21:47:16.5715799+00:00",
+  "ejecutable_sha256": "0C8031DFB737447349E6545182518225E0F6331E9D31B94EBB59C9D24AD29734",
+  "capturas": [
+    {
+      "archivo": "09-carlos-denegado-20261127.jpg",
+      "sha256": "5fdbe8855ba258c981fb438f051e7f68323d619ecb8d0c7388db2dfa3eca0056",
+      "bytes": 54502,
+      "procedencia": "Captura de la comprobación en vivo del acceso directo con Carlos.",
+      "fecha": "2026-11-27"
+    },
+    {
+      "archivo": "10-perfil-antes-reinicio-20261127.jpg",
+      "sha256": "5926e0b1cc7b35034549830a9824917282d9407a2f37e07a03c3bb5eb5c8f1e3",
+      "bytes": 62593,
+      "procedencia": "Captura del perfil antes de detener el proceso local.",
+      "fecha": "2026-11-27"
+    },
+    {
+      "archivo": "11-perfil-despues-reinicio-20261127.jpg",
+      "sha256": "5926e0b1cc7b35034549830a9824917282d9407a2f37e07a03c3bb5eb5c8f1e3",
+      "bytes": 62593,
+      "procedencia": "Captura tras reiniciar y recargar el perfil, sin un nuevo login.",
+      "fecha": "2026-11-27"
+    },
+    {
+      "archivo": "12-administracion-video-carlos-20261127.png",
+      "sha256": "60637aae6cb42229e0cb1967d841caa5130a17bbb595111206231604139d8c49",
+      "bytes": 93595,
+      "procedencia": "Fotograma de la grabación aportada por Carlos, aproximadamente 00:30. No es una nueva ejecución del revisor.",
+      "fecha": "2026-11-27"
+    }
+  ],
+  "pruebas_previas": "El registro del 25/11 contiene 17 casos de integración y 12 comprobaciones del ZIP correctas. No se presentan como nuevas ejecuciones del 27/11.",
+  "limites": "La persistencia comprobada corresponde al acceso técnico. El plano, las reservas y sus permisos siguen pendientes.",
+  "archivos_coinciden_con_zip_validado": {
+    "Nexo.Web.exe": true,
+    "Nexo.Web.dll": true,
+    "wwwroot/css/site.css": true,
+    "appsettings.json": true
+  },
+  "zip_sha256": "68aee6b799fb4bb1e2bf08d3285c8bfa77f9ec9abf9af0bbc5a89e1a33e631c2",
+  "publicacion_capturas": "Preparadas localmente; publicación pendiente de autorización."
+}

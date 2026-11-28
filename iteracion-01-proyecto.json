@@ -1,0 +1,55 @@
+{
+  "url": "https://github.com/users/CarlosCorCha/projects/1/views/3",
+  "project": "https://github.com/users/CarlosCorCha/projects/1",
+  "field": "Iteración",
+  "value": "Iteración 1",
+  "start": "2026-11-25",
+  "end": "2026-11-30",
+  "items": [
+    "GE01",
+    "GE02",
+    "ET01",
+    "ET02",
+    "ET05",
+    "HU01",
+    "HU02",
+    "HU03"
+  ],
+  "filter": "label:iteracion-01",
+  "status": "En curso; preparación del cierre",
+  "estados": {
+    "GE01": "Hecho",
+    "GE02": "En curso",
+    "ET01": "Hecho",
+    "ET02": "En curso",
+    "ET05": "En curso",
+    "HU01": "En curso",
+    "HU02": "Hecho",
+    "HU03": "En curso"
+  },
+  "revisión": "https://github.com/CarlosCorCha/nexo/pull/41",
+  "accesoPúblicoComprobado": "2026-11-27",
+  "notes": "Corte real del 28/11. Tres elementos completos, cinco parciales. Vídeo y revisión final aplazados; cierre previsto el 30/11. Segunda iteración planificada para el 1–13/12, sin iniciar.",
+  "fechaCorte": "2026-11-28",
+  "next_view": "https://github.com/users/CarlosCorCha/projects/1/views/4",
+  "next_filter": "label:iteracion-02",
+  "calendario": [
+    {
+      "iteracion": 1,
+      "inicio": "2026-11-25",
+      "fin": "2026-11-30"
+    },
+    {
+      "iteracion": 2,
+      "inicio": "2026-12-01",
+      "fin": "2026-12-13"
+    },
+    {
+      "iteracion": 3,
+      "inicio": "2026-12-14",
+      "fin": "2026-12-23",
+      "estado": "Periodo provisional sin selección de trabajo"
+    }
+  ],
+  "versionIncremento": "I01.1"
+}

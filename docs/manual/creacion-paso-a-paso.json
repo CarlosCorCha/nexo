@@ -1,0 +1,560 @@
+{
+  "title": "Manual de creación de Nexo y SQLite",
+  "date": "2026-11-28",
+  "version": "1.1",
+  "purpose": "Construir y comprobar la aplicación local de acceso con dos perfiles, desde una carpeta nueva, utilizando las fuentes de Nexo.",
+  "reproduction": "artifacts/reproduccion-20261128-r2",
+  "pages": [
+    {
+      "title": "Crear la solución y los proyectos",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La reproducción se ejecutó el 28 de noviembre de 2026 en una carpeta nueva. Desde la raíz de las fuentes de Nexo se creó un destino independiente, se copiaron global.json y Directory.Build.props y se ejecutaron los comandos siguientes dentro de ese destino."
+        },
+        {
+          "type": "code",
+          "text": "dotnet --version\ndotnet new sln --name Nexo --format sln\ndotnet new webapp --name Nexo.Web --output src/Nexo.Web --framework net10.0 --auth None --no-restore\ndotnet new xunit --name Nexo.Web.Tests --output tests/Nexo.Web.Tests --framework net10.0 --no-restore\ndotnet sln Nexo.sln add src/Nexo.Web/Nexo.Web.csproj tests/Nexo.Web.Tests/Nexo.Web.Tests.csproj\ndotnet add tests/Nexo.Web.Tests/Nexo.Web.Tests.csproj reference src/Nexo.Web/Nexo.Web.csproj"
+        },
+        {
+          "type": "figure",
+          "id": "01",
+          "caption": "Figura 1. Registro real de la fase Preparar, abierto en Bloc de notas. La plantilla crea la estructura inicial.",
+          "width": 395
+        },
+        {
+          "type": "paragraph",
+          "text": "Los comandos de plantilla crean una aplicación genérica. Las funciones de Nexo se incorporan en el paso siguiente mediante sus fuentes editables. La plantilla no genera las reservas ni las reglas del producto."
+        }
+      ]
+    },
+    {
+      "title": "Incorporar las dependencias y las fuentes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Se añaden los paquetes de persistencia, diseño de migraciones e integración de Identity con EF Core. Se fija la versión 10.0.15, que es la utilizada en esta reproducción."
+        },
+        {
+          "type": "code",
+          "text": "dotnet add src/Nexo.Web/Nexo.Web.csproj package Microsoft.EntityFrameworkCore.Sqlite --version 10.0.15 --no-restore\ndotnet add src/Nexo.Web/Nexo.Web.csproj package Microsoft.EntityFrameworkCore.Design --version 10.0.15 --no-restore\ndotnet add src/Nexo.Web/Nexo.Web.csproj package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 10.0.15 --no-restore"
+        },
+        {
+          "type": "paragraph",
+          "text": "El script conserva las carpetas de plantilla en plantillas e incorpora 37 archivos de la revisión local de Nexo. Copia las clases, páginas, estilos, proyectos, pruebas y archivos de bloqueo; excluye bin, obj y las migraciones antiguas. El manifiesto fuentes-incorporadas.json registra sus hashes."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Archivo o carpeta",
+            "Configuración que aporta"
+          ],
+          "rows": [
+            [
+              "global.json",
+              "SDK .NET 10.0.401."
+            ],
+            [
+              "Directory.Build.props",
+              "Compilación determinista, avisos como errores y bloqueo de paquetes."
+            ],
+            [
+              ".config/dotnet-tools.json",
+              "Herramienta local dotnet-ef 10.0.15."
+            ],
+            [
+              "src/Nexo.Web/Data",
+              "Contexto, usuario, factoría de diseño e inicialización."
+            ],
+            [
+              "src/Nexo.Web/Infrastructure",
+              "Ruta de datos, bloqueo de instancia y hora de la sede."
+            ],
+            [
+              "src/Nexo.Web/Pages y wwwroot",
+              "Páginas Razor, navegación y recursos locales de Nexo."
+            ],
+            [
+              "tests/Nexo.Web.Tests",
+              "Batería de integración del acceso y la persistencia."
+            ],
+            [
+              "scripts",
+              "Arranque, publicación y validación del paquete."
+            ]
+          ],
+          "widths": [
+            3100,
+            5404
+          ]
+        },
+        {
+          "type": "code",
+          "text": "dotnet restore Nexo.sln --locked-mode\ndotnet tool restore\ndotnet ef --version\ndotnet build Nexo.sln --no-restore -c Release -p:UseSharedCompilation=false -m:1 --disable-build-servers"
+        },
+        {
+          "type": "paragraph",
+          "text": "La restauración bloqueada valida las dependencias después de añadir sus referencias sin restauración inmediata. La compilación terminó con cero errores y cero advertencias."
+        }
+      ]
+    },
+    {
+      "title": "Configurar la aplicación y la persistencia",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Estos fragmentos muestran la configuración relevante de los archivos incorporados. La reproducción utiliza las clases completas conservadas en src/Nexo.Web; no requiere completar manualmente los fragmentos."
+        },
+        {
+          "type": "paragraph",
+          "text": "ApplicationDbContext hereda el modelo técnico de Identity y establece el nombre visible como obligatorio. NexoUser añade el nombre y el último acceso a la cuenta."
+        },
+        {
+          "type": "code",
+          "text": "public sealed class ApplicationDbContext(\n    DbContextOptions<ApplicationDbContext> options)\n    : IdentityDbContext<NexoUser>(options)\n{\n    protected override void OnModelCreating(ModelBuilder builder)\n    {\n        base.OnModelCreating(builder);\n        builder.Entity<NexoUser>().Property(x => x.DisplayName)\n            .HasMaxLength(100).IsRequired();\n    }\n}\n\npublic sealed class NexoUser : IdentityUser\n{\n    public string DisplayName { get; set; } = \"\";\n    public DateTimeOffset? LastAccessUtc { get; set; }\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Program.cs registra el contexto con el proveedor SQLite. DataDirectory resuelve la ruta completa, crea la carpeta y comprueba la escritura. El bloqueo exclusivo impide dos procesos sobre los mismos datos."
+        },
+        {
+          "type": "code",
+          "text": "builder.Services.AddDbContext<ApplicationDbContext>(\n    (services, options) => options.UseSqlite(\n        new SqliteConnectionStringBuilder {\n            DataSource = services.GetRequiredService<DataDirectory>()\n                                 .DatabasePath,\n            ForeignKeys = true,\n            DefaultTimeout = 30\n        }.ToString()));"
+        },
+        {
+          "type": "paragraph",
+          "text": "La ruta predeterminada es Datos junto al ejecutable; NEXO_DATA_DIR permite indicar otra carpeta. No se necesita un servidor SQL independiente. La configuración ordinaria de appsettings.json mantiene el puerto local y la apertura del navegador:"
+        },
+        {
+          "type": "code",
+          "text": "{\n  \"Nexo\": {\"Port\": 5187, \"OpenBrowser\": true},\n  \"AllowedHosts\": \"localhost;127.0.0.1;[::1]\"\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "ASP.NET Core Identity gestiona las contraseñas y la sesión. Las páginas protegidas exigen autenticación; la consulta de Administración añade la autorización por rol en servidor."
+        }
+      ]
+    },
+    {
+      "title": "Decisiones de implementación y flujo de acceso",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Las plantillas de .NET aportan el esqueleto del proyecto; el comportamiento de Nexo está en las clases y páginas incorporadas. Para localizar una función se parte de la petición del navegador y se sigue su PageModel hasta Identity y el contexto de datos. No se identifica la copia de las fuentes con su implementación histórica."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Componente",
+            "Responsabilidad y decisión"
+          ],
+          "rows": [
+            [
+              "Program.cs",
+              "Compone dependencias, sesión, autorización, conexión y arranque. La escucha se limita a 127.0.0.1."
+            ],
+            [
+              "Entrar.cshtml y Entrar.cshtml.cs",
+              "El formulario envía usuario, contraseña y token; el servidor valida la entrada y las credenciales."
+            ],
+            [
+              "UserManager y SignInManager",
+              "Identity comprueba el hash, el bloqueo y el perfil. Se evita implementar un algoritmo propio de contraseñas."
+            ],
+            [
+              "ApplicationDbContext y NexoUser",
+              "EF Core conserva el modelo técnico de cuentas y el último acceso; no representa el modelo completo de la oficina."
+            ],
+            [
+              "Perfil.cshtml.cs y Administración",
+              "El perfil se obtiene de la identidad autenticada. La consulta administrativa exige el rol en servidor."
+            ],
+            [
+              "DataDirectory y DemoAccounts",
+              "Resuelven ruta y exclusión de procesos, aplican migraciones e inicializan únicamente cuentas ausentes."
+            ]
+          ],
+          "widths": [
+            2700,
+            5804
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Un acceso correcto actualiza LastAccessUtc en SQLite y emite la cookie de sesión; la redirección solo admite destinos locales. Una contraseña inválida devuelve un error genérico. El cierre de sesión usa POST y protección antifalsificación. Las pruebas de integración recorren estas peticiones con la aplicación y una base temporal reales."
+        },
+        {
+          "type": "paragraph",
+          "text": "Razor Pages mantiene cerca cada pantalla y su lógica del servidor. SQLite evita instalar un servicio de base de datos y facilita la entrega en una carpeta; EF Core versiona el esquema. El paquete autocontenido elimina la instalación del runtime para el evaluador. Esta elección se ajusta a una demostración local, no pretende acreditar un despliegue multiusuario en la nube."
+        },
+        {
+          "type": "paragraph",
+          "text": "La versión de referencia de esta revisión es I01.1, con su migración histórica y su ZIP propio. Esta reproducción didáctica genera una migración independiente en otra carpeta. El manifiesto docs/entregas/I01.1.json distingue ambas procedencias; la segunda no sustituye al paquete de referencia ni modifica el alcance aprobado."
+        }
+      ]
+    },
+    {
+      "title": "Generar la migración y revisar el SQL",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Una vez incorporado el modelo, se genera una migración nueva en la copia de reproducción. Se recompila para incluirla en el ensamblado y se obtiene el SQL del esquema. No se modifica la migración histórica del repositorio."
+        },
+        {
+          "type": "code",
+          "text": "dotnet ef migrations add InitialAccess --project src/Nexo.Web --output-dir Data/Migrations --configuration Release --no-build\ndotnet build Nexo.sln --no-restore -c Release -p:UseSharedCompilation=false -m:1 --disable-build-servers\ndotnet ef migrations script 0 --project src/Nexo.Web --configuration Release --no-build --output registros/esquema.sql"
+        },
+        {
+          "type": "paragraph",
+          "text": "EF Core generó 20261128001906_InitialAccess.cs, sus metadatos Designer y ApplicationDbContextModelSnapshot.cs. El identificador temporal corresponde a esta reproducción y puede variar en otra ejecución."
+        },
+        {
+          "type": "figure",
+          "id": "02",
+          "caption": "Figura 2. Registro de la migración y del SQL. La comprobación confirma que todavía no existe DatosApp/nexo.db.",
+          "width": 425
+        },
+        {
+          "type": "paragraph",
+          "text": "Una migración describe cambios del esquema; el archivo SQLite se crea cuando esos cambios se aplican. El esquema.sql permite revisar tablas, claves e índices sin abrir la base."
+        },
+        {
+          "type": "paragraph",
+          "text": "La factoría de diseño utiliza nexo-design.db como conexión predeterminada de las herramientas. Para crear manualmente otra base se debe pasar --connection de forma explícita; el ejemplo de la última sección usa DatosManual y conserva separada la base de ejecución."
+        }
+      ]
+    },
+    {
+      "title": "Crear SQLite con el primer arranque",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Antes del primer arranque se comprobó que DatosApp/nexo.db no existía. El script inició la aplicación en el puerto 5191, con su directorio de trabajo en src/Nexo.Web y una ruta de datos independiente. La secuencia equivalente en una consola, partiendo de la raíz de la reproducción, es:"
+        },
+        {
+          "type": "code",
+          "text": "$env:NEXO_PORT = '5191'\n$env:NEXO_DATA_DIR = Join-Path (Get-Location) 'DatosApp'\n$env:NEXO_OPEN_BROWSER = '0'\n$env:DOTNET_ENVIRONMENT = 'Production'\nSet-Location src/Nexo.Web\ndotnet .\\bin\\Release\\net10.0\\Nexo.Web.dll"
+        },
+        {
+          "type": "paragraph",
+          "text": "Durante el arranque, DemoAccounts.InitializeAsync aplica Database.MigrateAsync y prepara las cuentas ausentes dentro de una transacción. Después se puede abrir http://127.0.0.1:5191 en el navegador. Para los comandos de las secciones siguientes se vuelve a la raíz de la reproducción."
+        },
+        {
+          "type": "figure",
+          "id": "03",
+          "caption": "Figura 3. Inspección real de SQLite en modo de solo lectura, después de la creación y del reinicio.",
+          "width": 425
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Grupo de tablas",
+            "Contenido técnico comprobado"
+          ],
+          "rows": [
+            [
+              "AspNetUsers, AspNetRoles y AspNetUserRoles",
+              "Cuentas, perfiles y asignaciones."
+            ],
+            [
+              "Cuatro tablas auxiliares de Identity",
+              "Claims de usuarios y roles, accesos externos y tokens."
+            ],
+            [
+              "__EFMigrationsHistory y __EFMigrationsLock",
+              "Migración aplicada y bloqueo de migraciones."
+            ],
+            [
+              "sqlite_sequence",
+              "Secuencias internas de SQLite."
+            ]
+          ],
+          "widths": [
+            3400,
+            5104
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Las diez tablas son técnicas. El modelo de oficina, puestos y reservas sigue pendiente; esta base de acceso no representa el modelo completo del producto."
+        }
+      ]
+    },
+    {
+      "title": "Inicializar las cuentas y verificar el reinicio",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La inicialización aplica primero el esquema. Después crea los perfiles ausentes y las cuentas ficticias de Carlos y Ana, y asigna sus roles. Antes de crear una cuenta comprueba si existe, de modo que un reinicio no la duplica ni restablece su contraseña."
+        },
+        {
+          "type": "code",
+          "text": "var db = services.GetRequiredService<ApplicationDbContext>();\nawait db.Database.MigrateAsync();\nawait using var transaction = await db.Database.BeginTransactionAsync();\n// Tras preparar los perfiles ausentes, AddAsync comprueba cada cuenta.\nawait AddAsync(\"carlos\", \"Carlos\", \"Nexo.Carlos2026!\", EmployeeRole);\nawait AddAsync(\"ana\", \"Ana\", \"Nexo.Ana2026!\", AdministratorRole);\nawait transaction.CommitAsync();"
+        },
+        {
+          "type": "paragraph",
+          "text": "En la reproducción se realizó un acceso HTTP de Carlos y se leyó SQLite antes de detener el servidor. Después se arrancó el mismo ensamblado sobre la misma carpeta y se compararon los registros."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Comprobación",
+            "Resultado real"
+          ],
+          "rows": [
+            [
+              "Usuarios y sus identificadores",
+              "Iguales antes y después: dos cuentas."
+            ],
+            [
+              "Roles y relaciones",
+              "Iguales: dos perfiles y dos asignaciones."
+            ],
+            [
+              "Migración aplicada",
+              "Igual: 20261128001906_InitialAccess."
+            ],
+            [
+              "Último acceso de Carlos",
+              "Conservado sin realizar otro inicio de sesión."
+            ],
+            [
+              "Sesión de prueba",
+              "El perfil respondió HTTP 200 tras el reinicio."
+            ],
+            [
+              "PRAGMA quick_check",
+              "ok."
+            ]
+          ],
+          "widths": [
+            3800,
+            4704
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "La inspección utiliza consultas de solo lectura; no extrae contraseñas ni hashes. Las consultas relevantes son:"
+        },
+        {
+          "type": "code",
+          "text": "PRAGMA quick_check;\nSELECT MigrationId, ProductVersion FROM __EFMigrationsHistory;\nSELECT UserName, DisplayName, LastAccessUtc\nFROM AspNetUsers ORDER BY UserName;\nSELECT Name FROM AspNetRoles ORDER BY Name;\nSELECT COUNT(*) FROM AspNetUserRoles;"
+        },
+        {
+          "type": "paragraph",
+          "text": "Los resultados originales están en registros/sqlite-antes-reinicio.json, sqlite-despues-reinicio.json y persistencia.json. La carpeta de datos y sus claves se conservan fuera del control de versiones."
+        }
+      ]
+    },
+    {
+      "title": "Comprobar la aplicación en el navegador",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La aplicación reconstruida sirvió su formulario real desde http://127.0.0.1:5191. La captura siguiente es un detalle del navegador, no una maqueta ni una imagen de la plantilla genérica."
+        },
+        {
+          "type": "figure",
+          "id": "05",
+          "caption": "Figura 4. Pantalla de acceso de la reproducción del 28/11/2026.",
+          "width": 335
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Persona",
+            "Usuario",
+            "Perfil"
+          ],
+          "rows": [
+            [
+              "Carlos",
+              "carlos",
+              "Empleado"
+            ],
+            [
+              "Ana",
+              "ana",
+              "Administrador"
+            ]
+          ],
+          "widths": [
+            2800,
+            2400,
+            3304
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Las contraseñas ficticias de demostración están en el README de Nexo y en la pantalla de acceso. La validación del perfil propio, del rechazo de Administración para el empleado y de la salida se cubre con las pruebas de integración de la sección siguiente."
+        },
+        {
+          "type": "paragraph",
+          "text": "El servidor temporal se detuvo al terminar la captura. Los datos de la reproducción permanecen guardados; las instancias de Nexo utilizadas antes de esta reproducción no se modificaron."
+        }
+      ]
+    },
+    {
+      "title": "Compilar y ejecutar las pruebas",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La solución reconstruida se compiló en Release sin errores ni advertencias. A continuación se ejecutaron las pruebas existentes contra carpetas SQLite de prueba independientes:"
+        },
+        {
+          "type": "code",
+          "text": "dotnet test Nexo.sln --no-build --no-restore -c Release --disable-build-servers --logger \"trx;LogFileName=reproduccion.trx\" --results-directory artifacts/pruebas-reproduccion"
+        },
+        {
+          "type": "figure",
+          "id": "04",
+          "caption": "Figura 5. Registro real de las pruebas de integración de la aplicación reconstruida.",
+          "width": 425
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Validación de esta reproducción",
+            "Resultado"
+          ],
+          "rows": [
+            [
+              "Pruebas de integración",
+              "17 correctas, 0 fallidas y 0 omitidas."
+            ],
+            [
+              "ZIP extraído y ejecutado con su runtime",
+              "12 comprobaciones correctas."
+            ]
+          ],
+          "widths": [
+            4900,
+            3604
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "La batería incluye acceso válido e inválido, bloqueo temporal, sesión, antifalsificación, permisos, identidad del perfil propio y persistencia tras reiniciar. El informe TRX conserva los resultados por caso."
+        },
+        {
+          "type": "paragraph",
+          "text": "La prueba del ZIP comprueba, además, el bucle local, los recursos de la carpeta, la segunda instancia, el puerto ocupado y los errores de ubicación de datos. Los resultados corresponden al ZIP generado en esta reproducción, no a otra publicación anterior."
+        }
+      ]
+    },
+    {
+      "title": "Publicar el paquete autocontenido",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La publicación usa su propio archivo de bloqueo para Windows x64. Se restaura ese destino y se publica con el runtime 10.0.15 incluido. Los comandos se ejecutan desde la raíz de la reproducción:"
+        },
+        {
+          "type": "code",
+          "text": "dotnet restore src/Nexo.Web/Nexo.Web.csproj -r win-x64 -p:RuntimeFrameworkVersion=10.0.15 -p:NuGetLockFilePath=packages.win-x64.lock.json --locked-mode\ndotnet publish src/Nexo.Web/Nexo.Web.csproj -c Release -r win-x64 --self-contained true --no-restore -p:RuntimeFrameworkVersion=10.0.15 -p:NuGetLockFilePath=packages.win-x64.lock.json -p:UseSharedCompilation=false -p:PublishSingleFile=false -o artifacts/Nexo-reproduccion-win-x64"
+        },
+        {
+          "type": "paragraph",
+          "text": "Se copian INICIAR.cmd y LEEME.txt desde scripts y se comprime la carpeta publicada completa. No se incorpora DatosApp ni la base utilizada durante las pruebas."
+        },
+        {
+          "type": "code",
+          "text": "Copy-Item scripts/INICIAR.cmd artifacts/Nexo-reproduccion-win-x64\nCopy-Item scripts/LEEME.txt artifacts/Nexo-reproduccion-win-x64\nCompress-Archive -LiteralPath artifacts/Nexo-reproduccion-win-x64 -DestinationPath artifacts/Nexo-reproduccion-win-x64.zip\n./scripts/probar-paquete.ps1 -Package ./artifacts/Nexo-reproduccion-win-x64.zip"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Elemento publicado",
+            "Uso"
+          ],
+          "rows": [
+            [
+              "Nexo.Web.exe y dependencias",
+              "Servidor y runtime de Windows x64."
+            ],
+            [
+              "wwwroot",
+              "Marca y estilos locales, incluido el ajuste visual del 28/11."
+            ],
+            [
+              "appsettings.json",
+              "Configuración predeterminada del puerto y navegador."
+            ],
+            [
+              "INICIAR.cmd y LEEME.txt",
+              "Arranque e instrucciones para el evaluador."
+            ]
+          ],
+          "widths": [
+            3400,
+            5104
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "El evaluador extrae el ZIP y ejecuta INICIAR.cmd sin instalar el SDK, Python ni un servidor de base de datos. En su primera ejecución se genera Datos junto al ejecutable. El puerto predeterminado del paquete sigue siendo 5187; 5191 se utilizó únicamente para esta reproducción."
+        },
+        {
+          "type": "paragraph",
+          "text": "ZIP verificado: Nexo-reproduccion-win-x64.zip. SHA256:"
+        },
+        {
+          "type": "code",
+          "text": "ECDECC48B566933176B852AC9FCB3C5066E67E1B0145FF089AC2ABC1A3CDE7C4"
+        }
+      ]
+    },
+    {
+      "title": "Repetir el procedimiento y consultar las evidencias",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "El script scripts/reproducir-creacion.ps1 conserva los registros por fase y rechaza sobrescribir una reproducción. Se ejecuta desde la raíz de las fuentes de Nexo con PowerShell 7, SDK .NET 10 y Python 3 para las inspecciones de SQLite. Python no forma parte del runtime de la aplicación."
+        },
+        {
+          "type": "code",
+          "text": "$destino = './artifacts/mi-reproduccion'\n$fases = 'Preparar','Configurar','Migrar','Arrancar',\n         'Comprobar','Verificar','Publicar','Detener'\nforeach ($fase in $fases) {\n    ./scripts/reproducir-creacion.ps1 -Fase $fase -Destino $destino -Puerto 5191 -PythonPath python\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Para comprobar la vía manual de EF Core, la fase Comprobar crea una segunda base separada. El fragmento equivalente cambia a la raíz de la copia y prepara la carpeta de datos. Se indica la conexión expresamente para no usar por accidente nexo-design.db:"
+        },
+        {
+          "type": "code",
+          "text": "Set-Location $destino\nNew-Item -ItemType Directory -Path DatosManual -Force\n$baseManual = Join-Path (Get-Location) 'DatosManual/nexo.db'\ndotnet ef database update --project src/Nexo.Web --configuration Release --no-build --connection \"Data Source=$baseManual\""
+        },
+        {
+          "type": "paragraph",
+          "text": "El resultado de esa vía manual fue diez tablas, una migración y cero usuarios y roles: database update aplica el esquema, mientras las cuentas se cargan al arrancar Nexo. La fase crea antes la carpeta DatosManual."
+        },
+        {
+          "type": "paragraph",
+          "text": "Registros completos: artifacts/reproduccion-20261128-r2/registros. Incluyen comandos y códigos de salida, SQL generado, hashes de las 37 fuentes incorporadas, inspecciones SQLite y comparación del reinicio. Los originales de las capturas y sus encuadres se conservan junto a sus manifiestos de procedencia."
+        },
+        {
+          "type": "paragraph",
+          "text": "Si una fase falla, se revisa su registro y se utiliza otro destino para una nueva reproducción. Un puerto ocupado no se libera terminando procesos ajenos. Las claves y archivos de datos no se añaden al repositorio."
+        },
+        {
+          "type": "paragraph",
+          "text": "Referencias técnicas: dotnet new y herramientas de EF Core en Microsoft Learn. Las instrucciones y resultados de este manual se contrastan con las fuentes y los registros locales de Nexo."
+        },
+        {
+          "type": "link",
+          "label": "Microsoft Learn sobre dotnet new",
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new"
+        },
+        {
+          "type": "link",
+          "label": "Microsoft Learn sobre migraciones de EF Core",
+          "url": "https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing"
+        },
+        {
+          "type": "link",
+          "label": "Microsoft Learn sobre la CLI de EF Core",
+          "url": "https://learn.microsoft.com/en-us/ef/core/cli/dotnet"
+        }
+      ]
+    }
+  ]
+}

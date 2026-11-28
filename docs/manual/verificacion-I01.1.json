@@ -1,0 +1,93 @@
+{
+  "version": "I01.1",
+  "fecha": "2026-11-28",
+  "integracion": {
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "trx_sha256": "a63e659895e16c9fb612fbe0d0e37f9c12b1c10cfc391a1feeae1d63f894f96e",
+    "date": "2026-11-28"
+  },
+  "comprobaciones_paquete": [
+    {
+      "comprobacion": "El ZIP extraído arranca con su propio runtime y crea SQLite",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Solo escucha en 127.0.0.1",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una página protegida exige autenticación",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Acceso de Carlos en el ejecutable publicado",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El perfil propio se consulta tras acceder",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El ejecutable rechaza administración para el empleado",
+      "correcta": true
+    },
+    {
+      "comprobacion": "CSS y marca se sirven desde la carpeta publicada",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una segunda instancia sobre los mismos datos falla de forma controlada",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Puerto ocupado: error comprensible sin cerrar el proceso existente",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una ubicación de datos no válida presenta un error de arranque",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Reinicio: se conservan la sesión y la información del perfil",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El último acceso guardado permanece sin un nuevo login",
+      "correcta": true
+    }
+  ],
+  "visual": {
+    "date": "2026-11-28",
+    "origin": "Ejecutable publicado I01.1 con datos ficticios independientes en puerto 5192",
+    "desktop": [
+      "acceso",
+      "inicio de Carlos",
+      "perfil de Carlos",
+      "administración de Ana",
+      "acceso directo denegado a Carlos"
+    ],
+    "mobile_css_width": 390,
+    "horizontal_page_overflow": false,
+    "mobile_table": "Desplazamiento horizontal en su propio contenedor",
+    "captures": {
+      "acceso-390.jpg": "fb8daeb5bf16a0c46cd345fb2848a2bf10827a16522c7e88e0cbabb0bac6fb06",
+      "acceso.jpg": "5e8df29dccc3ecd8d7ef3b6dc741ab7ba380e29a5cb27fd7aaa4ae48e9b9031a",
+      "administracion-390.jpg": "dc19092d41fb8c9465b1b1451d7d662ad7d15d8b4945e364776f414b405de566",
+      "administracion-movil.jpg": "bfac27bf3d1b2f02064b520b18686cbb5bf62092a1640c44e432cdbec1d560f8",
+      "administracion.jpg": "689bbc6ab1fbcf4296d6634cfefff8019b61a7150150e6691168d9955c4969c5",
+      "denegado.jpg": "cdc1306ddaabf4faaddf8f134cf4f8ee1242137a87ca891910eb4116d4009768",
+      "inicio-390.jpg": "6bace1396a07c1be31701e348594434f67701359b93996785ea55ad22779284b",
+      "inicio.jpg": "2cf832b6fcd12e2dbeea635412c20e98ce8d8fde119d761514f08a023222bac5",
+      "perfil-390.jpg": "5a7bf34641275bcc16969e26d861352379d41595438b8be59e3c9f17057b2b54",
+      "perfil.jpg": "90763218f8f459e6348a9e6ff46b441f5ceb0a5bd786d4dd3e5413dd5795edf4"
+    }
+  },
+  "paquete": {
+    "file": "Nexo-I01.1-win-x64.zip",
+    "sha256": "e6a88a3ac21e983d9225499f15a8c799d5deef2024481f85f6cefe89e5f3ccbc",
+    "runtime": ".NET 10.0.15 Windows x64",
+    "contains_database_or_keys": false
+  }
+}

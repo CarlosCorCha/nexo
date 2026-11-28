@@ -1,0 +1,92 @@
+{
+  "version": "0.2",
+  "fecha_preparacion": "2026-11-28",
+  "fecha_corte": "2026-11-28",
+  "inicio": "2026-11-25",
+  "cierre_previsto": "2026-11-30",
+  "estado": "Revisión técnica consolidada; pendientes finales aplazados por Carlos",
+  "terminados": [
+    "GE01",
+    "ET01",
+    "HU02"
+  ],
+  "parciales": [
+    "GE02",
+    "ET02",
+    "ET05",
+    "HU01",
+    "HU03"
+  ],
+  "ph_terminados": 6,
+  "ph_totales": 121,
+  "porcentaje_avance": 4.958677685950414,
+  "horas_estimadas": 16,
+  "dedicacion_humana_confirmada": 3,
+  "video": "Vídeo definitivo aplazado para incorporar el comentario de Carlos; duración máxima de cinco minutos.",
+  "video_url": null,
+  "validaciones": [
+    {
+      "id": "V01",
+      "escenario": "URL directa de Administración con Carlos",
+      "esperado": "Rechazo en servidor y ausencia de datos de administración",
+      "resultado": "La navegación termina en /Acceso/Denegado?ReturnUrl=%2FAdministracion y muestra ACCESO / 403.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V02",
+      "escenario": "Detener y reiniciar el paquete local",
+      "esperado": "Conservar registros, identificadores, relaciones, último acceso y claves",
+      "resultado": "Dos usuarios y dos roles antes y después; igualdad de todos los campos comparados, relaciones, migración y claves. SQLite quick_check devuelve ok.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V03",
+      "escenario": "Recargar el perfil tras reiniciar",
+      "esperado": "Mantener la sesión y el último acceso sin un nuevo login",
+      "resultado": "El perfil de Carlos sigue accesible y conserva 27/11/2026 22:47, hora Europe/Madrid.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V04",
+      "escenario": "Pedir /Perfil después de cerrar sesión",
+      "esperado": "Exigir autenticación",
+      "resultado": "Redirección a /Acceso/Entrar?ReturnUrl=%2FPerfil.",
+      "estado": "Correcto",
+      "fecha": "2026-11-27"
+    },
+    {
+      "id": "V05",
+      "escenario": "Recorrido aportado por Carlos con ambos perfiles",
+      "esperado": "Acceso, perfil, navegación y salida coherentes",
+      "resultado": "Sin incidencias visibles; Ana consulta las dos cuentas y Carlos ve su perfil de empleado. La grabación no sustituye a las comprobaciones de URL y reinicio.",
+      "estado": "Correcto en el recorrido mostrado",
+      "fecha": "2026-11-27"
+    }
+  ],
+  "pruebas_previas": "Nueva ejecución del 28/11 sobre I01.1: 17 pruebas de integración y 12 comprobaciones del ZIP correctas. Los registros del 25 y 27 se conservan como históricos.",
+  "problemas": [
+    "El primer calendario terminaba el 8 de diciembre y se ajustó al plazo del aula del 30 de noviembre, manteniendo el inicio real del 25/11. La excepción inicial de seis días queda documentada.",
+    "La revisión del vídeo no demostraba por sí sola el rechazo de una URL ni la persistencia. Se completaron ambas comprobaciones sobre el paquete real el 27/11, con resultados correctos."
+  ],
+  "retrospectiva": [
+    "Funcionó disponer de un ZIP con runtime propio y un recorrido corto con dos cuentas ficticias.",
+    "Las pruebas de servidor y de reinicio complementan la revisión visual; ocultar un menú o ver un perfil no basta para probar permisos o persistencia.",
+    "En la siguiente iteración se fijarán desde el inicio escenarios, resultados esperados y evidencias por historia. Los elementos parciales conservarán sus criterios pendientes."
+  ],
+  "pendientes_entrega": [
+    "Vídeo definitivo comentado y enlace accesible",
+    "Revisión final de la declaración de IA y acceso a los prompts",
+    "Comprobación final antes del envío por Carlos"
+  ],
+  "alcance_restante": "Modelo completo y diccionario; datos de oficina y escenarios; permisos sobre solicitudes, catálogos e informes; cinco CRUD del circuito, plano, automatismos, informes, indicadores y demás requisitos aprobados.",
+  "publicacion_evidencias": "Los medios nuevos permanecen locales. El vídeo definitivo y la revisión de IA se completarán al final.",
+  "dedicacion_detalle": {
+    "planificacion": 2,
+    "pruebas": 1,
+    "fuente": "Confirmación de Carlos el 27/11/2026"
+  },
+  "version_incremento": "I01.1"
+}

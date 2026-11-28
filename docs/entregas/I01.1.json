@@ -1,0 +1,125 @@
+{
+  "version": "I01.1",
+  "fecha_corte": "2026-11-28",
+  "estado": "Incremento técnico verificado; entrega pendiente del vídeo y revisión final de IA",
+  "backlog_version": "1.4",
+  "backlog_items": 40,
+  "backlog_points": 121,
+  "source_fingerprint_sha256": "43e60d268901181a8fcb68f738d760045b90a8eb54459a3ec0b0fff4dd397359",
+  "source_files": {
+    "src/Nexo.Web/appsettings.Development.json": "ab25244dd1ea008dcbd08fe9220282aeeb9d64a12c0e2926e71955174f3bb857",
+    "src/Nexo.Web/appsettings.json": "5142a19203cd3ea95e5d74c02d4d2b3c42422e543523ee1988a3c333d2bcbd05",
+    "src/Nexo.Web/Data/ApplicationDbContext.cs": "b8b99227c6ae1dd7e71244d9854d05133de8ec6e8199582d466c818a34667606",
+    "src/Nexo.Web/Data/DemoAccounts.cs": "65d5d32a8e458ff38d362e3c2840dcf10ffec8daad7999c7504c24f759ca0b28",
+    "src/Nexo.Web/Data/DesignTimeDbContextFactory.cs": "9f257c5a5f4d2327fc372b7b56c395a211a9b0b3acfaf8a3bc305042c839ea09",
+    "src/Nexo.Web/Data/Migrations/20261125202325_InitialAccess.cs": "f83ccb16f5297d4c6193b5399b4430b9b921cf01889b787f66e7f61b3d8a54b7",
+    "src/Nexo.Web/Data/Migrations/20261125202325_InitialAccess.Designer.cs": "ef16af915d0a58fa7b22d477f19ec985d9e6026378695534c40330318b7149c1",
+    "src/Nexo.Web/Data/Migrations/ApplicationDbContextModelSnapshot.cs": "6abfe65e35083f633d9d15bd08bbcc1ad0f0019a6287090b8e67467b1e0fadea",
+    "src/Nexo.Web/Data/NexoUser.cs": "30b9de019a3f9c5ff0fea5e722ad1ea81adb9c36148a1b386587d20c145b40b9",
+    "src/Nexo.Web/Infrastructure/DataDirectory.cs": "f250bfd585a2ff1ecb590553afec13c876b6b1953bb67a9d7846a2033e95a218",
+    "src/Nexo.Web/Infrastructure/OfficeTime.cs": "10ed0b35715ba70b497a610f845dd6bb37db4e9652b4b1bf705e9e01f80e76fe",
+    "src/Nexo.Web/Nexo.Web.csproj": "6bf720d7c1527dd61d6e6644f3f16cfa94363fe00698ad3662195412b4835f6a",
+    "src/Nexo.Web/packages.lock.json": "c3a50069d461c641d042bf81f7abbbb2e9d7964b0c134c232ffff0a6e2bc7b1d",
+    "src/Nexo.Web/packages.win-x64.lock.json": "de65901e0d89794ed1792a008d0e2648eba44e48c4ad6a8239077c41c6dfeeda",
+    "src/Nexo.Web/Pages/_ViewImports.cshtml": "2b13649ca5f1b7afd780ce3773aa2a25f4c2f9db4cb6fd08fddd0aa80fdf2dfd",
+    "src/Nexo.Web/Pages/_ViewStart.cshtml": "62afaee3500962d2262cf59943e45ad8be3d3e0d26698b4152a0c4b7705fc129",
+    "src/Nexo.Web/Pages/Acceso/Denegado.cshtml": "3c6a7f39c0eb3d28dc908ad3d8451ca497f2f46429d1c65ad22bafbef14e3c2e",
+    "src/Nexo.Web/Pages/Acceso/Denegado.cshtml.cs": "9b69ff119aa6024b4ade4496eddfed093822fa6ae5adede21b35e5be2f22e4c5",
+    "src/Nexo.Web/Pages/Acceso/Entrar.cshtml": "4eeb3c20ec38bfe462197e1a0e65ba7570866d506e30d2b7ecc3b54cb6d722ff",
+    "src/Nexo.Web/Pages/Acceso/Entrar.cshtml.cs": "b7fdf18be8523e4dd838b09fc176deeab8db4e7d28f58444d89a1f4c16bcd867",
+    "src/Nexo.Web/Pages/Acceso/Salir.cshtml": "0272e76782848d9553d7ea56f0012e4d5dc9fda2562c7b7d748c38be96ddb28f",
+    "src/Nexo.Web/Pages/Acceso/Salir.cshtml.cs": "20beb3344b2ff98b705193168ab2a0265317bbf6334313a4218ae3795ba78f46",
+    "src/Nexo.Web/Pages/Administracion/Index.cshtml": "ddc1337823cb5929f437bafc474447c99414f52cfef7a0f725f0828d479382f7",
+    "src/Nexo.Web/Pages/Administracion/Index.cshtml.cs": "d763fe978bd49bc8a411399927d9f0edb0434babb9f05ae0532e9c55e54867af",
+    "src/Nexo.Web/Pages/Error.cshtml": "e5581aeff01d8787b8734432d66fa11c170e8d1a5ece752e2db11c555fd67956",
+    "src/Nexo.Web/Pages/Error.cshtml.cs": "ca5a406fc6f1404bc3bfea3dcd552dcac1073108121e88213617020f63c723c8",
+    "src/Nexo.Web/Pages/Index.cshtml": "5f4f58b4403f09245a6ad81c8e2d8b6936c1881316d6d436863852ea722cdd65",
+    "src/Nexo.Web/Pages/Index.cshtml.cs": "ee71a2721d88ae8214f7f02d963443b6590e0abc086446931c4ce2b31159d11b",
+    "src/Nexo.Web/Pages/Perfil.cshtml": "abec77272824fbac445880b7b15f92348fd2f11c7762a9221e69e2b67123c60f",
+    "src/Nexo.Web/Pages/Perfil.cshtml.cs": "821c1a1739cba1447805146c0f9e039e9305361012e2daae93e54a931bd40a87",
+    "src/Nexo.Web/Pages/Shared/_Layout.cshtml": "85341216a86b37c25c7b6aa01b6a38f1c03b0305776ed8ed58416a34797e3c86",
+    "src/Nexo.Web/Program.cs": "8ff0c5e5c113cc3585355932f2d9514dd41be867dbd1ccd79b10c6e49f99870b",
+    "src/Nexo.Web/Properties/launchSettings.json": "b6d94ab5298cbdf2141f6e2bb9055b5659751b88502bb32e624e187bd96ceb5a",
+    "src/Nexo.Web/wwwroot/css/components.css": "805baaae17e492b668c2c3d461f5622b524dbfd2b0e696a9e6cb6bc7daf86086",
+    "src/Nexo.Web/wwwroot/css/site.css": "ffd32802c847914ff6ecacd57899b386b2460abdd566a8ed1f36f397f80d200b",
+    "src/Nexo.Web/wwwroot/nexo.svg": "0e9e84be5cd2e1d647808cf75dd5d526558a6c68bb2e707b706c18028d105d0c"
+  },
+  "source_hash_normalization": "SHA-256 de los bytes UTF-8 con saltos LF, conforme a .gitattributes; no depende de CRLF en una copia de Windows.",
+  "package": {
+    "file": "Nexo-I01.1-win-x64.zip",
+    "sha256": "e6a88a3ac21e983d9225499f15a8c799d5deef2024481f85f6cefe89e5f3ccbc",
+    "runtime": ".NET 10.0.15 Windows x64",
+    "contains_database_or_keys": false
+  },
+  "build": {
+    "configuration": "Release",
+    "warnings": 0,
+    "errors": 0
+  },
+  "integration": {
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "trx_sha256": "a63e659895e16c9fb612fbe0d0e37f9c12b1c10cfc391a1feeae1d63f894f96e",
+    "date": "2026-11-28"
+  },
+  "package_checks": {
+    "passed": 12,
+    "failed": 0,
+    "date": "2026-11-28",
+    "record_sha256": "b0d9b29a26b19d8724965dba3d815fa689e1c246b037fb86cde3172ab3a86824"
+  },
+  "visual": {
+    "date": "2026-11-28",
+    "origin": "Ejecutable publicado I01.1 con datos ficticios independientes en puerto 5192",
+    "desktop": [
+      "acceso",
+      "inicio de Carlos",
+      "perfil de Carlos",
+      "administración de Ana",
+      "acceso directo denegado a Carlos"
+    ],
+    "mobile_css_width": 390,
+    "horizontal_page_overflow": false,
+    "mobile_table": "Desplazamiento horizontal en su propio contenedor",
+    "captures": {
+      "acceso-390.jpg": "fb8daeb5bf16a0c46cd345fb2848a2bf10827a16522c7e88e0cbabb0bac6fb06",
+      "acceso.jpg": "5e8df29dccc3ecd8d7ef3b6dc741ab7ba380e29a5cb27fd7aaa4ae48e9b9031a",
+      "administracion-390.jpg": "dc19092d41fb8c9465b1b1451d7d662ad7d15d8b4945e364776f414b405de566",
+      "administracion-movil.jpg": "bfac27bf3d1b2f02064b520b18686cbb5bf62092a1640c44e432cdbec1d560f8",
+      "administracion.jpg": "689bbc6ab1fbcf4296d6634cfefff8019b61a7150150e6691168d9955c4969c5",
+      "denegado.jpg": "cdc1306ddaabf4faaddf8f134cf4f8ee1242137a87ca891910eb4116d4009768",
+      "inicio-390.jpg": "6bace1396a07c1be31701e348594434f67701359b93996785ea55ad22779284b",
+      "inicio.jpg": "2cf832b6fcd12e2dbeea635412c20e98ce8d8fde119d761514f08a023222bac5",
+      "perfil-390.jpg": "5a7bf34641275bcc16969e26d861352379d41595438b8be59e3c9f17057b2b54",
+      "perfil.jpg": "90763218f8f459e6348a9e6ff46b441f5ceb0a5bd786d4dd3e5413dd5795edf4"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-11-25",
+      "version": "iteracion-01-validada",
+      "purpose": "Primer paquete y pruebas históricas"
+    },
+    {
+      "date": "2026-11-27",
+      "purpose": "Revisión de Carlos y comprobaciones complementarias de URL y reinicio sobre el paquete anterior"
+    },
+    {
+      "date": "2026-11-28",
+      "purpose": "Reproducción didáctica en otra carpeta con migración independiente; no es la versión de referencia"
+    },
+    {
+      "date": "2026-11-28",
+      "version": "I01.1",
+      "purpose": "Versión de referencia con interfaz revisada y migración histórica del repositorio"
+    }
+  ],
+  "scope": "Acceso, persistencia técnica y estructura local. Sin plano, reservas ni mantenimientos de dominio implementados.",
+  "deferred_by_user": [
+    "Vídeo definitivo y enlace accesible",
+    "Revisión final de la declaración de IA"
+  ],
+  "media_publication": "No se publica ningún medio nuevo."
+}
+

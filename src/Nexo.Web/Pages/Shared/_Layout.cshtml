@@ -1,0 +1,32 @@
+@using Nexo.Web.Data
+@{ var currentPage = ViewContext.RouteData.Values["page"]?.ToString(); }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] · Nexo</title>
+    <link rel="icon" href="~/nexo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+        <a asp-page="/Index" class="brand" aria-label="Nexo, inicio"><span class="brand-symbol" aria-hidden="true">n</span>nexo<span class="brand-dot">.</span></a>
+        <span class="brand-caption">Un lugar para coincidir</span>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <nav aria-label="Navegación principal">
+                <a asp-page="/Index" aria-current="@(currentPage == "/Index" ? "page" : null)">Mi espacio</a>
+                <a asp-page="/Perfil" aria-current="@(currentPage == "/Perfil" ? "page" : null)">Mi perfil</a>
+                @if (User.IsInRole(DemoAccounts.AdministratorRole)) { <a asp-page="/Administracion/Index" aria-current="@(currentPage == "/Administracion/Index" ? "page" : null)">Administración</a> }
+            </nav>
+            <form method="post" asp-page="/Acceso/Salir"><button class="button-quiet" type="submit">Cerrar sesión</button></form>
+        }
+        else { <span class="local-badge"><span aria-hidden="true">●</span> Demostración local</span> }
+    </header>
+    <main id="contenido" tabindex="-1">@RenderBody()</main>
+    <footer class="site-footer"><span>Nexo · Oficinas híbridas</span><span>Tu equipo, más cerca. <span class="footer-separator" aria-hidden="true">/</span> Demostración local</span></footer>
+</body>
+</html>

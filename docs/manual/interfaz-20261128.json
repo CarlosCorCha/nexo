@@ -1,0 +1,117 @@
+{
+  "fecha": "2026-11-28",
+  "revision": "Interfaz incorporada a I01.1 y verificada el 28/11/2026",
+  "compilacion": {
+    "configuracion": "Release",
+    "errores": 0,
+    "advertencias": 0,
+    "opciones": "--no-restore -p:UseSharedCompilation=false -m:1 --disable-build-servers"
+  },
+  "integracion": {
+    "total": 17,
+    "correctas": 17,
+    "fallidas": 0,
+    "omitidas": 0,
+    "trx_sha256": "2fb9eaf6540c38be1fc673ea38dbe0262cab8ed21936ddc190c79dfce20b4435"
+  },
+  "navegador": {
+    "fecha": "2026-11-28",
+    "origen": "Vista previa local con datos independientes",
+    "administracionMovil": {
+      "antes": {
+        "client": 390,
+        "scroll": 390,
+        "table": 0,
+        "viewport": 390
+      },
+      "despues": {
+        "client": 390,
+        "focus": "Cuentas, perfiles y últimos accesos",
+        "outline": "solid",
+        "scroll": 390,
+        "table": 1.5,
+        "viewport": 390
+      }
+    },
+    "perfilMovil": {
+      "client": 390,
+      "current": "Mi perfil",
+      "page": "/Perfil",
+      "scroll": 390,
+      "viewport": 390
+    },
+    "inicioMovil": {
+      "client": 390,
+      "columns": "351px",
+      "current": "Mi espacio",
+      "page": "/",
+      "scroll": 390,
+      "viewport": 390
+    },
+    "accesoMovil": {
+      "client": 390,
+      "page": "/Acceso/Entrar",
+      "scroll": 390,
+      "viewport": 390
+    },
+    "teclado": {
+      "active": "Input_Password",
+      "outline": "solid",
+      "outlineWidth": "3px"
+    },
+    "recorrido": {
+      "errorCredenciales": true,
+      "carlosAccede": true,
+      "carlosAdministracionDenegada": true,
+      "anaAccede": true,
+      "anaConsultaDosCuentas": true,
+      "salida": true
+    },
+    "capturasPendientes": [
+      "Inicio",
+      "Perfil",
+      "Administración",
+      "Móvil"
+    ],
+    "incidenciaCaptura": "Tiempo de espera agotado en Page.captureScreenshot; navegación y lectura DOM disponibles."
+  },
+  "captura_acceso": {
+    "original": "acceso-despues-1280.jpg",
+    "original_sha256": "3a9e1366dd3e5a86583d459b8caa0fbbfc92f132ed886e841a37840e923142da",
+    "output": "acceso-vista-previa.png",
+    "output_sha256": "221713371525377f1ee1da3c021d9d8bcb0da36c9fb70f8996fa14b1aafc1de8",
+    "crop": [
+      0,
+      0,
+      1280,
+      900
+    ],
+    "treatment": "Recorte del área de la página; sin redimensionar ni modificar los píxeles del contenido.",
+    "provenance": "Captura real del navegador de la vista previa local del 28/11/2026."
+  },
+  "sources": {
+    "src/Nexo.Web/Pages/Shared/_Layout.cshtml": "85341216a86b37c25c7b6aa01b6a38f1c03b0305776ed8ed58416a34797e3c86",
+    "src/Nexo.Web/Pages/Acceso/Entrar.cshtml": "4eeb3c20ec38bfe462197e1a0e65ba7570866d506e30d2b7ecc3b54cb6d722ff",
+    "src/Nexo.Web/Pages/Index.cshtml": "5f4f58b4403f09245a6ad81c8e2d8b6936c1881316d6d436863852ea722cdd65",
+    "src/Nexo.Web/Pages/Perfil.cshtml": "abec77272824fbac445880b7b15f92348fd2f11c7762a9221e69e2b67123c60f",
+    "src/Nexo.Web/Pages/Administracion/Index.cshtml": "ddc1337823cb5929f437bafc474447c99414f52cfef7a0f725f0828d479382f7",
+    "src/Nexo.Web/wwwroot/css/components.css": "805baaae17e492b668c2c3d461f5622b524dbfd2b0e696a9e6cb6bc7daf86086"
+  },
+  "limitaciones": [
+    "Las notas anteriores sobre el fallo de captura conservan el estado de la primera sesión; la revisión posterior de I01.1 resuelve ese pendiente.",
+    "Las capturas y los medios nuevos permanecen locales."
+  ],
+  "alcance": "Presentación y textos de las páginas existentes; sin cambios en PageModels, permisos, persistencia o datos del paquete validado.",
+  "resolucion_capturas": {
+    "fecha": "2026-11-28",
+    "version": "I01.1",
+    "pantallas": [
+      "Inicio",
+      "Perfil",
+      "Administración",
+      "Móvil"
+    ],
+    "resultado": "Revisión visual realizada con capturas reales de un nuevo arranque del paquete publicado.",
+    "evidencia": "verificacion-I01.1.json"
+  }
+}

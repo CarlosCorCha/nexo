@@ -1,0 +1,407 @@
+{
+  "fecha_corte": "2026-11-28",
+  "version": "I01.1",
+  "criterios": [
+    {
+      "elemento": "GE01",
+      "criterio": "GE01-CA01",
+      "texto_original": "El repositorio contiene las fuentes y las instrucciones; el tablero registra identificador, prioridad, estimación, criterio de aceptación, responsable y estado de cada elemento.",
+      "estado": "Cubierto",
+      "comprobacion": "Repositorio y vistas con campos y enlaces",
+      "resultado_y_remanente": "Revisión del README y del tablero público; fuentes e instrucciones versionadas.",
+      "evidencia": "docs/iteraciones/iteracion-01.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "GE01",
+      "criterio": "GE01-CA02",
+      "texto_original": "Se dispone de columnas Por hacer, En curso, En revisión y Hecho; las tareas se vinculan a su historia y los enlaces reales se incorporan cuando estén creados.",
+      "estado": "Cubierto",
+      "comprobacion": "Vistas y tareas vinculadas al elemento",
+      "resultado_y_remanente": "Cuatro estados y selección original; desglose de 21 tareas en este registro.",
+      "evidencia": "docs/iteraciones/iteracion-01.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "GE02",
+      "criterio": "GE02-CA01",
+      "texto_original": "Cada planificación fija objetivo, fechas, historias seleccionadas, tareas estimadas en horas y dedicación real; se mantiene un registro breve del trabajo y los impedimentos.",
+      "estado": "Parcial",
+      "comprobacion": "Plan de 21 tareas; dedicación confirmada",
+      "resultado_y_remanente": "Periodo inicial de seis días, excepción documentada; 16 h estimadas y 3 h personales de ámbito distinto.",
+      "evidencia": "docs/iteraciones/iteracion-01.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "GE02",
+      "criterio": "GE02-CA02",
+      "texto_original": "Cada cierre incluye informe, vídeo de cinco minutos, revisión, retrospectiva y próxima iteración. Un cambio de alcance registra motivo, efecto y aprobación cuando corresponda.",
+      "estado": "Pendiente",
+      "comprobacion": "Informe y planificación preparados",
+      "resultado_y_remanente": "Vídeo definitivo y revisión final de declaración de IA aplazados por Carlos. El elemento permanece abierto.",
+      "evidencia": "docs/iteraciones/iteracion-01.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET01",
+      "criterio": "ET01-CA01",
+      "texto_original": "Existe un diagrama con navegador, servidor local, SQLite y procesos periódicos, indicando responsabilidades y llamadas.",
+      "estado": "Cubierto",
+      "comprobacion": "docs/arquitectura.md, diagrama y responsabilidades",
+      "resultado_y_remanente": "Separación entre componentes y procesos futuros identificada.",
+      "evidencia": "docs/arquitectura.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET01",
+      "criterio": "ET01-CA02",
+      "texto_original": "Se documentan entradas, resultados y errores de reserva, confirmación, cancelación y asignación, así como sus límites transaccionales.",
+      "estado": "Cubierto",
+      "comprobacion": "docs/arquitectura.md, contratos y transacciones",
+      "resultado_y_remanente": "Revisión documental de reserva, confirmación, cancelación y asignación; constituye diseño.",
+      "evidencia": "docs/arquitectura.md",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET02",
+      "criterio": "ET02-CA01",
+      "texto_original": "El modelo cubre los veinticinco mantenimientos, relaciones, estados, eventos y asignaciones, con claves, cardinalidades y justificación de las tres primeras formas normales.",
+      "estado": "Pendiente",
+      "comprobacion": "Modelo técnico Identity disponible",
+      "resultado_y_remanente": "Modelo completo de los veinticinco mantenimientos y justificación de normalización pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET02",
+      "criterio": "ET02-CA02",
+      "texto_original": "El diccionario de datos y las restricciones explican unicidad activa por empleado y puesto, bajas lógicas y puesto opcional en espera; las migraciones crean la base del prototipo.",
+      "estado": "Parcial",
+      "comprobacion": "Migración inicial y prueba de arranque del ZIP",
+      "resultado_y_remanente": "Migración técnica comprobada. Diccionario e invariantes del dominio pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET05",
+      "criterio": "ET05-CA01",
+      "texto_original": "Se precargan cuentas y perfiles, equipos y pertenencias, ubicaciones y relaciones auxiliares; Carlos y Ana aparecen en los escenarios del equipo.",
+      "estado": "Parcial",
+      "comprobacion": "Restart_preserves_identity_access_time_and_does_not_reset_password_or_duplicate_seed",
+      "resultado_y_remanente": "Dos cuentas, roles y relaciones conservados. Equipos, ubicaciones y datos de oficina pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "ET05",
+      "criterio": "ET05-CA02",
+      "texto_original": "Un restablecimiento explícito crea escenarios relativos al día de ejecución: reserva futura, zona llena con espera y pendiente ya vencida. El arranque normal no borra operaciones ni desplaza sus fechas.",
+      "estado": "Pendiente",
+      "comprobacion": "Escenarios de reservas aún no implementados",
+      "resultado_y_remanente": "Restablecimiento explícito y fechas relativas pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU01",
+      "criterio": "HU01-CA01",
+      "texto_original": "Dada una carpeta con escritura, al iniciar la aplicación se abre la página local y se utiliza SQLite; el servidor solo escucha en la interfaz de bucle local.",
+      "estado": "Cubierto",
+      "comprobacion": "ZIP: arranque, SQLite y escucha solo en 127.0.0.1",
+      "resultado_y_remanente": "Correcto en Windows x64. El lanzador conserva los mismos bytes de la versión histórica.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU01",
+      "criterio": "HU01-CA02",
+      "texto_original": "Tras guardar una operación válida y reiniciar, permanecen los mismos datos e identificadores; un segundo arranque no duplica los datos iniciales.",
+      "estado": "Parcial",
+      "comprobacion": "Restart_preserves_identity_access_time_and_does_not_reset_password_or_duplicate_seed; ZIP: reinicio",
+      "resultado_y_remanente": "Persistencia de cuentas y último acceso correcta; operaciones del circuito pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU01",
+      "criterio": "HU01-CA03",
+      "texto_original": "Sin conexión a Internet, se cargan la interfaz, los estilos y el plano; un puerto ocupado produce un mensaje comprensible y no cierra otros procesos.",
+      "estado": "Parcial",
+      "comprobacion": "Login_resources_are_local_and_security_headers_present; ZIP: puerto ocupado",
+      "resultado_y_remanente": "Recursos locales y puerto ocupado correctos. Plano y prueba del circuito sin Internet pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU02",
+      "criterio": "HU02-CA01",
+      "texto_original": "Las credenciales válidas de empleado y administrador abren su área; una contraseña incorrecta no inicia sesión y muestra un error sin revelar datos de la cuenta.",
+      "estado": "Cubierto",
+      "comprobacion": "Valid_account_gets_its_profile; Unknown_and_wrong_password_show_same_error_without_session",
+      "resultado_y_remanente": "Carlos y Ana acceden; error genérico sin sesión. Comprobación visual del paquete I01.1.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU02",
+      "criterio": "HU02-CA02",
+      "texto_original": "Al cerrar sesión, una petición posterior a una función protegida exige autenticación, también mediante acceso directo a su dirección.",
+      "estado": "Cubierto",
+      "comprobacion": "Login_and_logout_require_antiforgery_and_get_does_not_log_out; Anonymous_requires_login",
+      "resultado_y_remanente": "Tras salir, las funciones protegidas exigen autenticación.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU02",
+      "criterio": "HU02-CA03",
+      "texto_original": "Las contraseñas se almacenan mediante el hash de Identity; las acciones de cambio exigen una sesión válida y protección frente a peticiones falsificadas.",
+      "estado": "Cubierto",
+      "comprobacion": "Restart_preserves_identity_access_time_and_does_not_reset_password_or_duplicate_seed; Login_and_logout_require_antiforgery_and_get_does_not_log_out",
+      "resultado_y_remanente": "Hash de Identity y protección antifalsificación comprobados en las acciones disponibles.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU03",
+      "criterio": "HU03-CA01",
+      "texto_original": "Un empleado puede operar sobre sus solicitudes y consultar las reservas de su equipo; el administrador accede a catálogos, solicitudes e informes globales.",
+      "estado": "Parcial",
+      "comprobacion": "Administrator_can_read_preloaded_accounts; Profile_ignores_another_account_identifier",
+      "resultado_y_remanente": "Perfiles y consulta propia correctos; solicitudes, equipos e informes pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU03",
+      "criterio": "HU03-CA02",
+      "texto_original": "Al cambiar en una petición el identificador de una solicitud ajena, el servidor rechaza la modificación; ocultar el botón no es la única protección.",
+      "estado": "Pendiente",
+      "comprobacion": "Profile_ignores_another_account_identifier solo comprueba el perfil",
+      "resultado_y_remanente": "La prueba de identificadores de solicitudes ajenas se ejecutará al implementar solicitudes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    },
+    {
+      "elemento": "HU03",
+      "criterio": "HU03-CA03",
+      "texto_original": "Un empleado no accede a catálogos ni informes globales mediante una URL directa; la respuesta no expone datos restringidos.",
+      "estado": "Parcial",
+      "comprobacion": "Employee_direct_admin_url_is_denied_without_restricted_data; ZIP: acceso restringido",
+      "resultado_y_remanente": "Administración denegada a Carlos. Catálogos e informes globales pendientes.",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "version": "I01.1",
+      "fecha": "2026-11-28"
+    }
+  ],
+  "tareas": [
+    {
+      "id": "GE01-T01",
+      "nombre": "Organizar fuentes, comandos y enlaces del repositorio",
+      "horas": 0.25,
+      "elemento": "GE01",
+      "estado": "Completada",
+      "evidencia": "docs/iteraciones/iteracion-01.md y tablero público",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "GE01-T02",
+      "nombre": "Ajustar la vista de iteración y comprobar acceso y campos del tablero",
+      "horas": 0.5,
+      "elemento": "GE01",
+      "estado": "Completada",
+      "evidencia": "docs/iteraciones/iteracion-01.md y tablero público",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "GE02-T01",
+      "nombre": "Formalizar objetivo, fechas, tareas y validación de la primera iteración",
+      "horas": 1,
+      "elemento": "GE02",
+      "estado": "Completada",
+      "evidencia": "docs/iteraciones/iteracion-01.md y tablero público",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "GE02-T02",
+      "nombre": "Preparar informe de cierre y planificación siguiente en un único PDF",
+      "horas": 1,
+      "elemento": "GE02",
+      "estado": "Preparada",
+      "evidencia": "Informe y planificación; vídeo y revisión final pendientes",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "GE02-T03",
+      "nombre": "Revisar el incremento, registrar retrospectiva y preparar vídeo de hasta cinco minutos",
+      "horas": 1,
+      "elemento": "GE02",
+      "estado": "Parcial",
+      "evidencia": "Informe y planificación; vídeo y revisión final pendientes",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET01-T01",
+      "nombre": "Describir componentes, llamadas y separación de responsabilidades",
+      "horas": 0.5,
+      "elemento": "ET01",
+      "estado": "Completada",
+      "evidencia": "docs/arquitectura.md",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET01-T02",
+      "nombre": "Definir contratos, errores y transacciones del circuito aprobado",
+      "horas": 0.5,
+      "elemento": "ET01",
+      "estado": "Completada",
+      "evidencia": "docs/arquitectura.md",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET01-T03",
+      "nombre": "Contrastar los contratos con las reglas de reserva y los límites de implementación",
+      "horas": 0.25,
+      "elemento": "ET01",
+      "estado": "Completada",
+      "evidencia": "docs/arquitectura.md",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET02-T01",
+      "nombre": "Definir el esquema técnico inicial de acceso y su ubicación de datos",
+      "horas": 0.25,
+      "elemento": "ET02",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET02-T02",
+      "nombre": "Generar y verificar la migración inicial reproducible de SQLite",
+      "horas": 0.5,
+      "elemento": "ET02",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET05-T01",
+      "nombre": "Precargar Carlos como empleado y Ana como administradora",
+      "horas": 0.25,
+      "elemento": "ET05",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "ET05-T02",
+      "nombre": "Comprobar que reiniciar no duplica cuentas ni restablece contraseñas existentes",
+      "horas": 0.5,
+      "elemento": "ET05",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU01-T01",
+      "nombre": "Preparar arranque local, carpeta de datos y errores de inicio",
+      "horas": 1,
+      "elemento": "HU01",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU01-T02",
+      "nombre": "Publicar el ZIP Windows x64 con runtime y recursos propios",
+      "horas": 1,
+      "elemento": "HU01",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU01-T03",
+      "nombre": "Probar el ZIP extraído, el reinicio, el puerto ocupado y las instrucciones",
+      "horas": 1.25,
+      "elemento": "HU01",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU02-T01",
+      "nombre": "Implementar acceso y salida con Identity, hash y sesión",
+      "horas": 1.5,
+      "elemento": "HU02",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU02-T02",
+      "nombre": "Probar credenciales válidas e inválidas, antifalsificación y redirecciones",
+      "horas": 1.5,
+      "elemento": "HU02",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU02-T03",
+      "nombre": "Revisar ambos perfiles en el navegador y documentar el recorrido",
+      "horas": 0.75,
+      "elemento": "HU02",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU03-T01",
+      "nombre": "Aplicar autorización en servidor a las áreas disponibles",
+      "horas": 1,
+      "elemento": "HU03",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU03-T02",
+      "nombre": "Contrastar la matriz de permisos y la parametrización prevista en el modelo completo",
+      "horas": 0.5,
+      "elemento": "HU03",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    },
+    {
+      "id": "HU03-T03",
+      "nombre": "Probar acceso directo restringido y perfil derivado de la sesión",
+      "horas": 1,
+      "elemento": "HU03",
+      "estado": "Completada",
+      "evidencia": "docs/manual/verificacion-I01.1.json",
+      "fecha_corte": "2026-11-28"
+    }
+  ],
+  "regla": "Completar una tarea técnica de esta selección no cierra el elemento transversal del backlog."
+}

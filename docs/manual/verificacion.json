@@ -1,0 +1,151 @@
+{
+  "origen": "Resultados reales de dotnet test y scripts/probar-paquete.ps1",
+  "fechaPruebas": "2026-11-25T21:25:26.1691852+01:00",
+  "integracion": [
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Anonymous_requires_login(path: \"/Perfil\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.2396720"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Restart_preserves_identity_access_time_and_does_not_reset_password_or_duplicate_seed",
+      "resultado": "Passed",
+      "duracion": "00:00:01.0937761"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Valid_account_gets_its_profile(user: \"ana\", password: \"Nexo.Ana2026!\", role: \"Administrador\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.3519387"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Return_destination_must_be_local(destination: \"//example.org/\", expected: \"/\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.5384235"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Employee_direct_admin_url_is_denied_without_restricted_data",
+      "resultado": "Passed",
+      "duracion": "00:00:00.5010578"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Profile_ignores_another_account_identifier",
+      "resultado": "Passed",
+      "duracion": "00:00:00.4265818"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Return_destination_must_be_local(destination: \"https://example.org/\", expected: \"/\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.4653227"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Login_resources_are_local_and_security_headers_present",
+      "resultado": "Passed",
+      "duracion": "00:00:00.2591426"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Anonymous_requires_login(path: \"/Administracion\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.2698205"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Administrator_can_read_preloaded_accounts",
+      "resultado": "Passed",
+      "duracion": "00:00:00.4692281"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Valid_account_gets_its_profile(user: \"carlos@nexo.local\", password: \"Nexo.Carlos2026!\", role: \"Empleado\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.3876842"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Anonymous_requires_login(path: \"/\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.2674853"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Return_destination_must_be_local(destination: \"/Perfil\", expected: \"/Perfil\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.4612709"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Login_and_logout_require_antiforgery_and_get_does_not_log_out",
+      "resultado": "Passed",
+      "duracion": "00:00:03.9226859"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Valid_account_gets_its_profile(user: \"carlos\", password: \"Nexo.Carlos2026!\", role: \"Empleado\")",
+      "resultado": "Passed",
+      "duracion": "00:00:00.5480421"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Unknown_and_wrong_password_show_same_error_without_session",
+      "resultado": "Passed",
+      "duracion": "00:00:00.3866978"
+    },
+    {
+      "prueba": "Nexo.Web.Tests.AccessTests.Five_wrong_passwords_temporarily_lock_account",
+      "resultado": "Passed",
+      "duracion": "00:00:00.8799158"
+    }
+  ],
+  "fechaPaqueteUtc": "2026-11-25T21:34:02.5107277+01:00",
+  "paquete": "Nexo-iteracion-01-validada-win-x64.zip",
+  "bytesPaquete": 53431141,
+  "sha256": "68AEE6B799FB4BB1E2BF08D3285C8BFA77F9EC9ABF9AF0BBC5A89E1A33E631C2",
+  "ejecutable": [
+    {
+      "comprobacion": "El ZIP extraído arranca con su propio runtime y crea SQLite",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Solo escucha en 127.0.0.1",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una página protegida exige autenticación",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Acceso de Carlos en el ejecutable publicado",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El perfil propio se consulta tras acceder",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El ejecutable rechaza administración para el empleado",
+      "correcta": true
+    },
+    {
+      "comprobacion": "CSS y marca se sirven desde la carpeta publicada",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una segunda instancia sobre los mismos datos falla de forma controlada",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Puerto ocupado: error comprensible sin cerrar el proceso existente",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Una ubicación de datos no válida presenta un error de arranque",
+      "correcta": true
+    },
+    {
+      "comprobacion": "Reinicio: se conservan la sesión y la información del perfil",
+      "correcta": true
+    },
+    {
+      "comprobacion": "El último acceso guardado permanece sin un nuevo login",
+      "correcta": true
+    }
+  ],
+  "limites": [
+    "Pendiente revisión y aceptación de Carlos.",
+    "El plano y las reservas aún no están implementados.",
+    "No se ha desconectado la red del equipo; se han comprobado referencias y recursos locales.",
+    "El rechazo de permisos se ha probado en las rutas actuales; falta verificar las solicitudes propias y ajenas."
+  ]
+}

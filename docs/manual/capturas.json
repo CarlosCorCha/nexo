@@ -1,0 +1,50 @@
+[
+  {
+    "archivo": "01-planificacion-iteracion.jpg",
+    "fechaUtc": "2026-11-25T20:09:52.4254872Z",
+    "bytes": 96798,
+    "sha256": "D25DBC95CBE017070C749E90CA7838C2E4C040B415874B70DA64D7C9650A07DA"
+  },
+  {
+    "archivo": "02-acceso-local.jpg",
+    "fechaUtc": "2026-11-25T20:28:14.7676779Z",
+    "bytes": 75424,
+    "sha256": "6ECB47C14153C8D0DC87637A2D73F5A0758666F8755071F11545EF5A7073AF20"
+  },
+  {
+    "archivo": "03-inicio-empleado.jpg",
+    "fechaUtc": "2026-11-25T20:28:22.7854891Z",
+    "bytes": 65587,
+    "sha256": "4D34F0AE9B535B3682C42217627527EED839CE26D80321EEC80B09E95EEB59C4"
+  },
+  {
+    "archivo": "04-perfil-persistido.jpg",
+    "fechaUtc": "2026-11-25T20:28:25.8030952Z",
+    "bytes": 45418,
+    "sha256": "A56DBFF309D16D20FF2987AA595D23DDC1BFBD321E22C97AA676E9125C23D057"
+  },
+  {
+    "archivo": "05-acceso-rechazado.jpg",
+    "fechaUtc": "2026-11-25T20:28:34.2391561Z",
+    "bytes": 36928,
+    "sha256": "F756087D160C2FD35D567F08B32AB56A4EFC2D0FD55B6911F276AF8957EDD28D"
+  },
+  {
+    "archivo": "06-administracion.jpg",
+    "fechaUtc": "2026-11-25T20:28:46.2207311Z",
+    "bytes": 56453,
+    "sha256": "79CFB66817FDF71EF42462AB7F0343D448DD0B947890C31074D2AEAA6E493282"
+  },
+  {
+    "archivo": "07-acceso-movil.jpg",
+    "fechaUtc": "2026-11-25T20:29:01.2564085Z",
+    "bytes": 53996,
+    "sha256": "7AA103F3BD52467827118542C857BF948849CF3413D4C760E0B2C740F5EAD760"
+  },
+  {
+    "archivo": "08-tablero-publico.jpg",
+    "fechaUtc": "2026-11-25T20:39:52.1754190Z",
+    "bytes": 83911,
+    "sha256": "40E42F1F7A79BC77B035EA096D5E761E3D84C827EFCCD0CCD1DF20F4A837C113"
+  }
+]

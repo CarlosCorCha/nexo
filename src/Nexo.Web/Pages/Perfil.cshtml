@@ -1,0 +1,13 @@
+@page
+@model Nexo.Web.Pages.PerfilModel
+@using Nexo.Web.Infrastructure
+@{ ViewData["Title"] = "Mi perfil"; }
+<div class="page-content narrow-content">
+    <a class="back-link" asp-page="/Index">← Mi espacio</a>
+    <p class="eyebrow">TU CUENTA</p><h1>Mi perfil<span class="accent">.</span></h1><p class="intro">Tu información, de un vistazo.</p>
+    <section class="profile-card" aria-labelledby="profile-name">
+        <div class="profile-heading"><span class="avatar" aria-hidden="true">@Model.Account.DisplayName[..1]</span><div><h2 id="profile-name">@Model.Account.DisplayName</h2><p>Cuenta de demostración</p></div><span class="role-badge">@string.Join(", ", Model.Roles)</span></div>
+        <dl class="profile-data"><div><dt>Usuario</dt><dd>@Model.Account.UserName</dd></div><div><dt>Correo de demostración</dt><dd>@Model.Account.Email</dd></div><div><dt>Último acceso guardado</dt><dd>@OfficeTime.Format(Model.Account.LastAccessUtc)<small>Hora de la sede · Europe/Madrid</small></dd></div></dl>
+    </section>
+    <p class="footnote">Solo tú puedes consultar tu perfil desde esta pantalla.</p>
+</div>
